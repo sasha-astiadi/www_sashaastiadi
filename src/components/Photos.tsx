@@ -11,7 +11,7 @@ import image6 from '@/images/photos/project_maison.png'
 const images = [image1, image2, image3, image4, image5, image6]
 
 export function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
+  let rotations = ['rotate-1', '-rotate-1', 'rotate-1', '-rotate-1', 'rotate-1', '-rotate-1']
 
   return (
     <div className="mt-16 lg:mt-24">

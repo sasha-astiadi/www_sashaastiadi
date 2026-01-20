@@ -83,7 +83,7 @@ export function Education() {
     },
     {
       institution: 'CODE University of Applied Sciences',
-      degree: 'Bachelor of Applied Science (BASc), Computer Software Engineering',
+      degree: 'Bachelor of Applied Science (BASc), Product Management',
       logo: logoCode,
       start: '2017',
       end: '2020',

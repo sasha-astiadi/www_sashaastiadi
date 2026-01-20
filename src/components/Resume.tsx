@@ -92,7 +92,7 @@ export function Resume() {
   let resume: Array<Role> = [
     {
       company: 'OurWorld Holding',
-      title: 'Web Architect & Venture Creator',
+      title: 'Web Architect & WebOps',
       logo: logoOurWorld,
       start: '2023',
       end: {
@@ -102,28 +102,28 @@ export function Resume() {
     },
     {
       company: 'ThreeFold Foundation',
-      title: 'Design & WebOps Manager',
+      title: 'Front-end / Web Developer',
       logo: logoThreeFold,
       start: '2020',
       end: '2023',
     },
     {
       company: 'HERE Technologies',
-      title: 'User Experience Researcher',
+      title: 'UX Researcher',
       logo: logoHere,
       start: '2019',
       end: '2020',
     },
     {
       company: 'Volkswagen Commercial Vehicles',
-      title: 'User Experience Designer',
+      title: 'UX / UI Designer',
       logo: logoVolkswagen,
       start: '2018',
       end: '2019',
     },
     {
       company: 'Goethe-Institut',
-      title: 'User Experience Designer',
+      title: 'UX / UI Designer',
       logo: logoGoethe,
       start: '2019',
       end: '2019',

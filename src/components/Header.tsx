@@ -212,7 +212,7 @@ function AvatarContainer({
     <div
       className={clsx(
         className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10',
+        'h-[4.5rem] w-[4.5rem] rounded-full bg-white/90 p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10',
       )}
       {...props}
     />
@@ -236,10 +236,10 @@ function Avatar({
       <Image
         src={avatarImage}
         alt=""
-        sizes={large ? '4rem' : '2.25rem'}
+        sizes={large ? '8rem' : '4.5rem'}
         className={clsx(
           'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
-          large ? 'h-16 w-16' : 'h-9 w-9',
+          large ? 'h-32 w-32' : 'h-[4.5rem] w-[4.5rem]',
         )}
         priority
       />
@@ -313,7 +313,7 @@ export function Header() {
       }
 
       let fromScale = 1
-      let toScale = 36 / 64
+      let toScale = 72 / 128
       let fromX = 0
       let toX = 2 / 16
 
@@ -367,7 +367,7 @@ export function Header() {
           <>
             <div
               ref={avatarRef}
-              className="order-last mt-[calc(--spacing(16)-(--spacing(3)))]"
+              className="order-last mt-[calc(--spacing(40)-(--spacing(3)))]"
             />
             <Container
               className="top-0 order-last -mb-3 pt-3"
@@ -393,7 +393,7 @@ export function Header() {
                   />
                   <Avatar
                     large
-                    className="block h-16 w-16 origin-left"
+                    className="block h-32 w-32 origin-left"
                     style={{ transform: 'var(--avatar-image-transform)' }}
                   />
                 </div>

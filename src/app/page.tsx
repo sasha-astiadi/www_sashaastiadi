@@ -5,6 +5,7 @@ import { Articles } from '@/components/Articles'
 import { Newsletter } from '@/components/Newsletter'
 import { Resume } from '@/components/Resume'
 import { getAllArticles } from '@/lib/articles'
+import LogoClouds from '@/components/LogoClouds'
 
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
@@ -12,6 +13,7 @@ export default async function Home() {
   return (
     <>
       <Hero />
+      <LogoClouds />
       <Photos />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">

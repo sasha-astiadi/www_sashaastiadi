@@ -29,7 +29,7 @@ export function Hero() {
           Hi, I'm Sasha. I plan, design and build digital products that scale.
         </h1>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          I help teams plan, orchestrate, and execute clear, scalable web platforms, drawing on over five years of experience across product planning, UX, product thinking, web architecture, and implementation.
+          I help teams plan, orchestrate, and execute clear, scalable web platforms, drawing on over five years of experience across product planning, UX, design thinking, web architecture, engineering and delivery.
         </p>
         <div className="mt-6 flex gap-6">
           <SocialLink href="#" aria-label="Follow on X" icon={XIcon} />

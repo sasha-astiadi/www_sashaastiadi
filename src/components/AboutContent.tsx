@@ -83,8 +83,7 @@ export function AboutBio() {
         </p>
         <p>
           Today, I work as a freelance web consultant, supporting projects
-          end-to-end, from strategy and UX to architecture and implementation,
-          and I'm open to new freelance and consulting opportunities.
+          end-to-end, from product planning and UX to production-grade frontend architecture and delivery.
         </p>
       </div>
     </div>

@@ -89,9 +89,9 @@ const categories: Category[] = [
     name: 'Delivery & Collaboration',
     tools: [
       { name: 'Slack', Icon: SiSlack },
-      { name: 'Agile', Icon: SiReact },
-      { name: 'Scrum', Icon: SiReact },
-      { name: 'Kanban', Icon: SiReact },
+      { name: 'Git', Icon: SiGit },
+      { name: 'Gitea', Icon: SiGit },
+      { name: 'Forgejo', Icon: SiGit },
     ],
   },
 ]
@@ -116,7 +116,7 @@ export function TechnologyStack() {
 
   return (
     <section className="mt-24 md:mt-28">
-      <div className="max-w-2xl">
+      <div className="mx-auto max-w-4xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
           Full-stack web & product expertise
         </h2>
@@ -128,7 +128,7 @@ export function TechnologyStack() {
       </div>
 
       {/* Filter tabs */}
-      <div className="mt-12 flex flex-wrap gap-2">
+      <div className="mt-12 flex flex-wrap justify-center gap-2">
         {categories.map((category) => {
           const isActive = category.name === activeCategory
           return (
@@ -150,7 +150,7 @@ export function TechnologyStack() {
       {/* Tools grid */}
       <ul
         role="list"
-        className="mt-16 grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+        className="mx-auto mt-16 grid max-w-5xl grid-cols-1 justify-items-center gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-4"
       >
         {active?.tools.map((tool) => (
           <ToolCard key={tool.name} tool={tool} />

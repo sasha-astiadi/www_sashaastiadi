@@ -1,10 +1,11 @@
 import Image, { type ImageProps } from 'next/image'
 
 import { Button } from '@/components/Button'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoOurWorld from '@/images/logos/resume/ourworld.jpeg'
+import logoThreeFold from '@/images/logos/resume/threefold.jpeg'
+import logoHere from '@/images/logos/resume/here.jpeg'
+import logoVolkswagen from '@/images/logos/resume/volkswagen.jpeg'
+import logoGoethe from '@/images/logos/resume/goethe.jpeg'
 
 function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -90,35 +91,42 @@ function Role({ role }: { role: Role }) {
 export function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'OurWorld Holding',
+      title: 'Web Architect & Venture Creator',
+      logo: logoOurWorld,
+      start: '2023',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
+      company: 'ThreeFold Foundation',
+      title: 'Design & WebOps Manager',
+      logo: logoThreeFold,
+      start: '2020',
+      end: '2023',
+    },
+    {
+      company: 'HERE Technologies',
+      title: 'User Experience Researcher',
+      logo: logoHere,
+      start: '2019',
+      end: '2020',
+    },
+    {
+      company: 'Volkswagen Commercial Vehicles',
+      title: 'User Experience Designer',
+      logo: logoVolkswagen,
+      start: '2018',
       end: '2019',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-    },
-    {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'Goethe-Institut',
+      title: 'User Experience Designer',
+      logo: logoGoethe,
+      start: '2019',
+      end: '2019',
     },
   ]
 

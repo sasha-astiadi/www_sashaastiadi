@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  outputFileTracingRoot: import.meta.dirname,
   outputFileTracingIncludes: {
     '/articles/*': ['./src/app/articles/**/*.mdx'],
   },

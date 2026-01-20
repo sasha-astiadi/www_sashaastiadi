@@ -1,16 +1,17 @@
 import Image from 'next/image'
 import clsx from 'clsx'
 
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import image1 from '@/images/photos/project_ow.png'
+import image2 from '@/images/photos/project_here.png'
+import image3 from '@/images/photos/project_indaba.png'
+import image4 from '@/images/photos/project_threefold.png'
+import image5 from '@/images/photos/project_mycelium.png'
+import image6 from '@/images/photos/project_maison.png'
 
-const images = [image1, image2, image3, image4, image5]
+const images = [image1, image2, image3, image4, image5, image6]
 
 export function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
 
   return (
     <div className="mt-16 lg:mt-24">
@@ -28,11 +29,11 @@ export function Photos() {
             <div
               key={`${image.src}-${imageIndex}`}
               className={clsx(
-                'relative w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 lg:w-100 sm:rounded-2xl dark:bg-zinc-800',
+                'relative w-44 flex-none overflow-hidden rounded-lg bg-zinc-100 sm:w-72 lg:w-100 sm:rounded-2xl dark:bg-zinc-800',
                 rotations[imageIndex % rotations.length],
               )}
             >
-              <div className="aspect-3/2">
+              <div className="aspect-video">
                 <Image
                   src={image}
                   alt=""

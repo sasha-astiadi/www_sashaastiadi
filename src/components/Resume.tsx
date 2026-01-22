@@ -92,7 +92,7 @@ export function Resume() {
   let resume: Array<Role> = [
     {
       company: 'OurWorld Holding',
-      title: 'Web Architect & WebOps',
+      title: 'Web Architect / WebOps Manager',
       logo: logoOurWorld,
       start: '2023',
       end: {

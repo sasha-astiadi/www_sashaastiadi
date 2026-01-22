@@ -24,6 +24,8 @@ import {
   SiTrello,
   SiNotion,
   SiSlack,
+  SiNetlify,
+  SiVercel,
 } from 'react-icons/si'
 import { Astro, ViteJS } from 'developer-icons'
 
@@ -50,9 +52,9 @@ const categories: Category[] = [
       { name: 'Node.js', Icon: SiNodedotjs },
       { name: 'CSS', Icon: SiCss3 },
       { name: 'Tailwind CSS', Icon: SiTailwindcss },
-      { name: 'Git', Icon: SiGit },
-      { name: 'GitHub', Icon: SiGithub },
       { name: 'WordPress', Icon: SiWordpress },
+      { name: 'Netlify', Icon: SiNetlify },
+      { name: 'Vercel', Icon: SiVercel },
     ],
   },
   {
@@ -90,6 +92,7 @@ const categories: Category[] = [
     tools: [
       { name: 'Slack', Icon: SiSlack },
       { name: 'Git', Icon: SiGit },
+      { name: 'GitHub', Icon: SiGithub },
       { name: 'Gitea', Icon: SiGit },
       { name: 'Forgejo', Icon: SiGit },
     ],

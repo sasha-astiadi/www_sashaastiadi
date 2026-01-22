@@ -184,7 +184,7 @@ export function TechnologyStack() {
           Full-stack web & product expertise
         </h2>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          I’m experienced in building and maintaining production web platforms
+          I’m experienced in building and maintaining web applications
           using industry-standard frameworks and tools. I work end-to-end — from
           product planning and UX to implementation and delivery.
         </p>

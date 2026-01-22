@@ -20,7 +20,7 @@ export function Photos() {
           Selected projects & case studies
         </h2>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          A selection of projects where I’ve helped teams plan, design, and build scalable web platforms; spanning product strategy, UX, and implementation across startups, NGOs, and global organizations.
+          A selection of projects where I’ve helped teams plan, design, and build scalable web web applications; spanning product strategy, UX, and implementation across startups, NGOs, and global organizations.
         </p>
       </div>
       <div className="mt-16 -my-4 overflow-hidden py-4">

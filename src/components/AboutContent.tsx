@@ -71,7 +71,7 @@ export function AboutBio() {
           With a strong background in UX Design and Product Management, for
           over five years, I've worked across web operations, product strategy,
           and hands-on development, helping teams design, build, and scale
-          user-centric web platforms.
+          user-centric web applications.
         </p>
         <p>
           I combine technical execution with a deep understanding of user
@@ -94,16 +94,16 @@ export function AboutSocialLinks() {
   return (
     <div className="lg:pl-20">
       <ul role="list">
-        <SocialLink href="#" icon={XIcon}>
+        <SocialLink href="https://x.com/sashatigresa" icon={XIcon}>
           Follow on X
         </SocialLink>
-        <SocialLink href="#" icon={InstagramIcon} className="mt-4">
+        <SocialLink href="https://www.instagram.com/sashatigresa" icon={InstagramIcon} className="mt-4">
           Follow on Instagram
         </SocialLink>
-        <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+        <SocialLink href="https://github.com/sasha-astiadi" icon={GitHubIcon} className="mt-4">
           Follow on GitHub
         </SocialLink>
-        <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+        <SocialLink href="https://www.linkedin.com/in/sastiadi/" icon={LinkedInIcon} className="mt-4">
           Follow on LinkedIn
         </SocialLink>
         <SocialLink

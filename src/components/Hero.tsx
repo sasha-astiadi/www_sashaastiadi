@@ -26,25 +26,25 @@ export function Hero() {
     <Container className="mt-9">
       <div className="max-w-2xl">
         <h1 className="lg:mt-24 mt-12 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          Hi, I'm Sasha. I plan, design and build digital products that scale.
+          Hi, I'm Sasha. I plan, design and develop websites that scale.
         </h1>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-         As a digital product consultant, I help teams plan, orchestrate, and execute clear, scalable platforms; drawing on over five years of experience across product planning, UX, design thinking, web architecture, engineering, and delivery.
+         As a digital prodcut consultant specializing in web development projects, I help teams plan, orchestrate, and execute clear, scalable web applications; drawing on over five years of experience across product planning, UX, design thinking, web architecture, engineering, and delivery.
         </p>
         <div className="mt-6 flex gap-6">
-          <SocialLink href="#" aria-label="Follow on X" icon={XIcon} />
+          <SocialLink href="https://x.com/sashatigresa" aria-label="Follow on X" icon={XIcon} />
           <SocialLink
-            href="#"
+            href="https://www.instagram.com/sashatigresa"
             aria-label="Follow on Instagram"
             icon={InstagramIcon}
           />
           <SocialLink
-            href="#"
+            href="https://github.com/sasha-astiadi"
             aria-label="Follow on GitHub"
             icon={GitHubIcon}
           />
           <SocialLink
-            href="#"
+            href="https://www.linkedin.com/in/sastiadi/"
             aria-label="Follow on LinkedIn"
             icon={LinkedInIcon}
           />

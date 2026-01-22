@@ -51,7 +51,7 @@ interface Role {
   end: string | { label: string; dateTime: string }
 }
 
-function Role({ role }: { role: Role }) {
+function Role({ role, bgColor }: { role: Role; bgColor: string }) {
   let startLabel =
     typeof role.start === 'string' ? role.start : role.start.label
   let startDate =
@@ -62,7 +62,10 @@ function Role({ role }: { role: Role }) {
 
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+      <div 
+        className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:ring-0"
+        style={{ backgroundColor: bgColor }}
+      >
         <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
@@ -89,7 +92,7 @@ function Role({ role }: { role: Role }) {
 }
 
 export function Resume() {
-  let resume: Array<Role> = [
+  let resume: Array<Role & { bgColor: string }> = [
     {
       company: 'OurWorld Holding',
       title: 'Web Architect / WebOps Manager',
@@ -99,6 +102,7 @@ export function Resume() {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
+      bgColor: '#000000',
     },
     {
       company: 'ThreeFold Foundation',
@@ -106,6 +110,7 @@ export function Resume() {
       logo: logoThreeFold,
       start: '2020',
       end: '2023',
+      bgColor: '#000000',
     },
     {
       company: 'HERE Technologies',
@@ -113,6 +118,7 @@ export function Resume() {
       logo: logoHere,
       start: '2019',
       end: '2020',
+      bgColor: '#163947',
     },
     {
       company: 'Volkswagen Commercial Vehicles',
@@ -120,6 +126,7 @@ export function Resume() {
       logo: logoVolkswagen,
       start: '2018',
       end: '2019',
+      bgColor: '#ffffff',
     },
     {
       company: 'Goethe-Institut',
@@ -127,6 +134,7 @@ export function Resume() {
       logo: logoGoethe,
       start: '2019',
       end: '2019',
+      bgColor: '#A1C814',
     },
   ]
 
@@ -138,7 +146,7 @@ export function Resume() {
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
-          <Role key={roleIndex} role={role} />
+          <Role key={roleIndex} role={role} bgColor={role.bgColor} />
         ))}
       </ol>
       <Button href="#" variant="secondary" className="group mt-6 w-full">

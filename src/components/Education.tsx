@@ -36,10 +36,13 @@ interface EducationItem {
   issued?: string
 }
 
-function EducationEntry({ item }: { item: EducationItem }) {
+function EducationEntry({ item, bgColor }: { item: EducationItem; bgColor: string }) {
   return (
     <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+      <div 
+        className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:ring-0"
+        style={{ backgroundColor: bgColor }}
+      >
         <Image src={item.logo} alt="" className="h-7 w-7" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
@@ -73,13 +76,14 @@ function EducationEntry({ item }: { item: EducationItem }) {
 }
 
 export function Education() {
-  const education: Array<EducationItem> = [
+  const education: Array<EducationItem & { bgColor: string }> = [
         {
       institution: 'Udacity',
       degree: 'Front-end Web Development Nanodegree',
       logo: logoUdacity,
       start: '2021',
       end: '2021',
+      bgColor: '#1F17FB',
     },
     {
       institution: 'CODE University of Applied Sciences',
@@ -87,6 +91,7 @@ export function Education() {
       logo: logoCode,
       start: '2017',
       end: '2020',
+      bgColor: '#1C2022',
     },
     {
       institution: 'Beijing Language and Culture University',
@@ -94,6 +99,7 @@ export function Education() {
       logo: logoBLCU,
       start: '2013',
       end: '2017',
+      bgColor: '#FAFAFA',
     },
 
   ]
@@ -107,7 +113,7 @@ export function Education() {
 
       <ol className="mt-6 space-y-4">
         {education.map((item, index) => (
-          <EducationEntry key={index} item={item} />
+          <EducationEntry key={index} item={item} bgColor={item.bgColor} />
         ))}
       </ol>
     </div>

@@ -32,7 +32,7 @@ export function HighlightedCase() {
           <div className="mx-auto max-w-7xl mt-12">
             <Link href="/projects/ourworld-rebranding" className="group block">
               {/* Image */}
-              <div className="relative mx-auto mb-8 aspect-[7/3] max-w-5xl overflow-hidden rounded-md">
+              <div className="relative mx-auto mb-8 aspect-7/3 max-w-5xl overflow-hidden rounded-md">
                 <Image
                   src={owAfterImage}
                   alt="OurWorld rebranding §case study"

@@ -4,7 +4,10 @@ import { formatDate } from '@/lib/formatDate'
 
 function Article({ article }: { article: ArticleWithSlug }) {
   return (
-    <Card as="article">
+    <Card
+      as="article"
+      className="rounded-xl bg-white p-6 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"
+    >
       <Card.Title href={`/articles/${article.slug}`}>
         {article.title}
       </Card.Title>

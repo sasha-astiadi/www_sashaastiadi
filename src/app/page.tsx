@@ -3,6 +3,7 @@ import { Hero } from '@/components/Hero'
 import { HighlightedCase } from '@/components/HighlightedCase'
 import { Articles } from '@/components/Articles'
 import { Education } from '@/components/Education'
+import { WorkingLanguages } from '@/components/WorkingLanguages'
 import { Resume } from '@/components/Resume'
 import { getAllArticles } from '@/lib/articles'
 import LogoClouds from '@/components/LogoClouds'
@@ -36,10 +37,11 @@ export default async function Home() {
         <HighlightedCase />
       </ContainerOuter>
 
-      <Container className="mt-24 md:mt-28">
+      <Container className="mt-12 md:mt-24">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <Articles articles={articles} />
           <div className="space-y-10 lg:pl-16 xl:pl-24">
+            <WorkingLanguages />
             <Education />
             <Resume />
           </div>

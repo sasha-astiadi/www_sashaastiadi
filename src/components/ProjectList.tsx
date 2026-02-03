@@ -27,39 +27,52 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: 'Planetaria',
+    name: 'Maison Noire',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+      'A sophisticated speakeasy bar website template focused on mood, atmosphere, and storytelling through refined typography, motion, and layout.',
+    link: {
+      href: 'https://www-maison-noire.vercel.app/',
+      label: 'maison-noire.vercel.app',
+    },
     logo: logoPlanetaria,
   },
   {
-    name: 'Animaginary',
+    name: 'OurWorld',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
+      'A decentralized digital ecosystem exploring alternative internet infrastructure, community-owned networks, and new models of digital sovereignty.',
+    link: { href: 'https://ourworld.tf', label: 'ourworld.tf' },
     logo: logoAnimaginary,
   },
   {
-    name: 'HelioStream',
+    name: 'Project Mycelium',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
+      'An exploratory project using mycelium as a metaphor for decentralized systems — focusing on networks, interconnection, and emergent behavior.',
+    link: { href: 'https://projectmycelium.com', label: 'projectmycelium.com' },
     logo: logoHelioStream,
   },
   {
-    name: 'cosmOS',
+    name: 'ThreeFold',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
+      'A decentralized internet infrastructure project enabling people to become their own internet providers through sustainable, community-powered nodes.',
+    link: { href: 'https://threefold.io', label: 'threefold.io' },
     logo: logoCosmos,
   },
   {
-    name: 'OpenShuttle',
+    name: 'Mbweni Ruins & Gardens',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
+      'A destination and hospitality website blending heritage, nature, and storytelling — designed to showcase place, history, and experience.',
+    link: {
+      href: 'https://www.mbweniruinsandgardens.com/',
+      label: 'mbweniruinsandgardens.com',
+    },
     logo: logoOpenShuttle,
+  },
+  {
+    name: 'Geomind',
+    description:
+      'A new generation of decentralized cloud. Faster, greener, smarter. Deploy your own datacenter, scale globally, and own your cloud, turning idle capacity into profit.',
+    link: { href: 'https://geomind.io', label: 'geomind.io' },
+    logo: logoPlanetaria,
   },
 ]
 
@@ -67,17 +80,15 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <Card as="li">
       <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image
-          src={project.logo}
-          alt=""
-          className="h-9 w-9"
-          unoptimized
-        />
+        <Image src={project.logo} alt="" className="h-9 w-9" unoptimized />
       </div>
+
       <h2 className="mt-6 text-base font-normal text-zinc-800 dark:text-zinc-100">
         <Card.Link href={project.link.href}>{project.name}</Card.Link>
       </h2>
+
       <Card.Description>{project.description}</Card.Description>
+
       <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
         <LinkIcon className="h-9 w-9 flex-none" />
         <span className="ml-2">{project.link.label}</span>

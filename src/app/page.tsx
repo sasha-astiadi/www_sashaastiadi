@@ -1,6 +1,6 @@
 import { Container, ContainerOuter } from '@/components/Container'
 import { Hero } from '@/components/Hero'
-import { Photos } from '@/components/Photos'
+import { HighlightedCase } from '@/components/HighlightedCase'
 import { Articles } from '@/components/Articles'
 import { Education } from '@/components/Education'
 import { Resume } from '@/components/Resume'
@@ -32,9 +32,9 @@ export default async function Home() {
         </ContainerOuter>
       </div>
 
-      <Container className="mt-9">
-        <Photos />
-      </Container>
+      <ContainerOuter className="mt-9">
+        <HighlightedCase />
+      </ContainerOuter>
 
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">

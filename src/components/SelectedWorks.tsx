@@ -74,7 +74,7 @@ export const SelectedWorks = () => {
   let isActive = useRevealIsActive('works')
 
   return (
-    <div className="lg:pb-12 pb-12">
+    <div className="lg:pb-0 pb-12">
       <ContainerOuter>
         <div
           className={`mx-2 overflow-hidden rounded-xl sm:mx-0 ${newHeroGradientLight} ${newHeroGradientDark}`}

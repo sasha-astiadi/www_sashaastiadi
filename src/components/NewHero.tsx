@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import { ContainerOuter } from '@/components/Container'
-import { libreBodoni } from '@/app/layout'
+import { libreBodoniItalic } from '@/components/ui/Texts'
 
 import heroImage from '@/images/hero.webp'
 
@@ -17,7 +17,10 @@ export function NewHero() {
                   <div className="hidden sm:mt-32 sm:flex lg:mt-0">
                     <div className="relative rounded-full px-3 py-1 text-sm/6 text-zinc-600 ring-1 ring-zinc-900/10 hover:ring-zinc-900/20 dark:text-zinc-400 dark:ring-white/10 dark:hover:ring-white/20">
                       Ready to step up your web performance?{" "}
-                      <a href="#" className="font-normal whitespace-nowrap text-zinc-900 dark:text-zinc-100">
+                      <a
+                        href="#"
+                        className={`${libreBodoniItalic} whitespace-nowrap text-zinc-900 dark:text-zinc-100`}
+                      >
                         <span aria-hidden="true" className="absolute inset-0" />
                         Book a call <span aria-hidden="true">&rarr;</span>
                       </a>
@@ -26,7 +29,7 @@ export function NewHero() {
                   <h1 className="mt-4 text-5xl font-normal tracking-tight text-pretty text-zinc-900 sm:mt-10 sm:text-6xl dark:text-zinc-100">
                     Design & Build High-performing Websites
                     <br />
-                    <span className={`${libreBodoni.className} text-[1.2em] font-normal italic`}>
+                    <span className={`${libreBodoniItalic} text-[1.2em]`}>
                       that scale.
                     </span>
                   </h1>
@@ -42,7 +45,10 @@ export function NewHero() {
                     >
                       Get started
                     </a>
-                    <a href="#" className="text-sm/6 font-normal text-zinc-900 dark:text-zinc-100">
+                    <a
+                      href="#"
+                      className={`${libreBodoniItalic} text-sm/6 text-zinc-900 dark:text-zinc-100`}
+                    >
                       Learn more <span aria-hidden="true">→</span>
                     </a>
                   </div>

@@ -1,4 +1,6 @@
 import { Card } from '@/components/Card'
+import { Button } from '@/components/Button'
+import { Eyebrow } from '@/components/ui/Texts'
 import { type ArticleWithSlug } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import Image from 'next/image'
@@ -62,7 +64,7 @@ function Article({
         </div>
       )}
       <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
+      <Card.Cta>Read Case Study</Card.Cta>
     </Card>
   )
 }
@@ -78,7 +80,7 @@ function Highlighted({ item, grouped }: { item: HighlightedItem; grouped?: boole
       }
     >
       <Link href={item.href} className="relative z-10 block">
-        <div className="h-48 w-full overflow-hidden rounded-md bg-zinc-100 dark:bg-zinc-800 sm:h-42 lg:h-100">
+        <div className="aspect-2/1 w-full overflow-hidden rounded-md bg-zinc-100 dark:bg-zinc-800">
           <img
             src={typeof item.image === 'string' ? item.image : item.image.src}
             alt=""
@@ -106,12 +108,15 @@ function Highlighted({ item, grouped }: { item: HighlightedItem; grouped?: boole
 function HighlightedHeader() {
   return (
     <div>
-      <h2 className="text-base/7 font-normal text-zinc-600 dark:text-zinc-400">
-        CASE STUDY
-      </h2>
+      <Eyebrow>CASE STUDIES</Eyebrow>
       <h2 className="text-4xl font-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
         The Process Behind the Product
       </h2>
+      <div className="mt-4">
+        <Button href="/articles" variant="secondary">
+          View all
+        </Button>
+      </div>
     </div>
   )
 }

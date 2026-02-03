@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { Fragment, useMemo, useState } from 'react'
 import { Card } from '@/components/Card'
+import { Eyebrow } from '@/components/ui/Texts'
 import {
   SiTypescript,
   SiJavascript,
@@ -182,7 +183,7 @@ export function TechnologyStack() {
   return (
     <section className="py-12">
       <div className="mx-auto max-w-4xl text-center">
-        <h2 className="text-base/7 font-normal text-zinc-600 dark:text-zinc-400">TECHNOLOGY STACK</h2>
+        <Eyebrow>TECHNOLOGY STACK</Eyebrow>
         <h2 className="text-4xl font-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
           Full-stack web & product expertise
         </h2>

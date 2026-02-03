@@ -12,7 +12,6 @@ import {
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.webp'
 import { ContainerInner, ContainerOuter } from '@/components/Container'
-import { SocialLink } from '@/components/SocialLink'
 import { FlipWords } from '@/components/ui/flip-words'
 import {
   libreBodoniItalic,

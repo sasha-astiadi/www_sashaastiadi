@@ -42,7 +42,7 @@ export const AppContext = createContext<{ previousPathname?: string }>({})
 
 export function Providers({ children }: { children: React.ReactNode }) {
   let pathname = usePathname()
-  let previousPathname = usePrevious(pathname)
+  let previousPathname: string | undefined = usePrevious(pathname) ?? undefined
 
   return (
     <AppContext.Provider value={{ previousPathname }}>

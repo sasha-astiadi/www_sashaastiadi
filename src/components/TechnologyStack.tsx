@@ -187,11 +187,6 @@ export function TechnologyStack() {
         <h2 className="text-4xl font-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
           Full-stack Web <span className={libreBodoniItalic}>Expertise</span>
         </h2>
-        <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          I’m experienced in building and maintaining web applications
-          using industry-standard frameworks and tools. I work end-to-end — from
-          product planning and UX to implementation and delivery.
-        </p>
       </div>
 
       {/* Filter tabs */}

@@ -1,5 +1,6 @@
 import { TbLanguage } from 'react-icons/tb'
 import ReactCountryFlag from 'react-country-flag'
+import { newHeroGradientDark, newHeroGradientLight } from '@/components/ui/Texts'
 
 interface LanguageItem {
   name: string
@@ -43,7 +44,7 @@ export function WorkingLanguages() {
   ]
 
   return (
-    <div className="rounded-xl bg-white p-6 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
+    <div className={`rounded-xl p-6 ${newHeroGradientLight} ${newHeroGradientDark}`}>
       <h2 className="flex text-base font-normal text-zinc-900 dark:text-zinc-100">
         <TbLanguage className="h-9 w-9 flex-none text-[#9F9FA9] dark:text-[#71717C]" />
         <span className="ml-3">Languages</span>

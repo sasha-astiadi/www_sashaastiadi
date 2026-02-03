@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { newHeroGradientDark, newHeroGradientLight } from '@/components/ui/Texts'
 
 import { ContainerInner, ContainerOuter } from '@/components/Container'
 
@@ -24,7 +25,9 @@ export function Footer() {
     <footer className="mt-12 flex-none">
       <ContainerOuter>
         <div className="border-t border-zinc-100 pt-12 dark:border-zinc-700/40">
-          <div className="mx-2 overflow-hidden rounded-xl bg-white py-8 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 sm:mx-0">
+          <div
+            className={`mx-2 overflow-hidden rounded-xl py-8 sm:mx-0 ${newHeroGradientLight} ${newHeroGradientDark}`}
+          >
             <ContainerOuter>
               <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
                 <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-normal text-zinc-800 dark:text-zinc-200">

@@ -10,6 +10,7 @@ import { SelectedWorks } from '@/components/SelectedWorks'
 import { NewHero } from '@/components/NewHero'
 import { ServicesGrid } from '@/components/ServicesGrid'
 import { CTA } from '@/components/CTA'
+import { newHeroGradientDark, newHeroGradientLight } from '@/components/ui/Texts'
 
 
 export default async function Home() {
@@ -21,9 +22,11 @@ export default async function Home() {
       <LogoClouds />
       <ServicesGrid />
       <SelectedWorks />
-      <div className="mt-9">
+      <div className="">
         <ContainerOuter>
-          <div className="mx-2 overflow-hidden rounded-xl bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 sm:mx-0">
+          <div
+            className={`mx-2 overflow-hidden rounded-xl sm:mx-0 ${newHeroGradientLight} ${newHeroGradientDark}`}
+          >
             <div className="relative px-4 sm:px-8 lg:pl-8 lg:pr-0">
               <TechnologyStack />
             </div>
@@ -34,7 +37,12 @@ export default async function Home() {
       <ContainerOuter className="mt-12">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-12 lg:gap-x-0">
           <div className="lg:col-span-8">
-            <Articles articles={articles} highlighted />
+            <div
+              className={`overflow-hidden rounded-xl ${newHeroGradientLight} ${newHeroGradientDark}`}
+            >
+
+                <Articles articles={articles} highlighted />
+            </div>
           </div>
           <div className="space-y-10 lg:col-span-4 lg:pl-4 xl:pl-8">
             <WorkingLanguages />

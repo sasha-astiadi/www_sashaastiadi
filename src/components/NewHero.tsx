@@ -1,7 +1,12 @@
 import Image from 'next/image'
 
 import { ContainerOuter } from '@/components/Container'
-import { libreBodoniItalic } from '@/components/ui/Texts'
+import { Button } from '@/components/Button'
+import {
+  libreBodoniItalic,
+  newHeroGradientDark,
+  newHeroGradientLight,
+} from '@/components/ui/Texts'
 
 import heroImage from '@/images/hero.webp'
 
@@ -9,7 +14,9 @@ export function NewHero() {
   return (
     <div className="relative">
       <ContainerOuter>
-        <div className="mx-2 overflow-hidden rounded-xl bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 sm:mx-0">
+        <div
+          className={`mx-2 overflow-hidden rounded-xl ${newHeroGradientLight} ${newHeroGradientDark} dark:ring-0 sm:mx-0`}
+        >
           <div className="relative px-4 sm:px-8 lg:pl-8 lg:pr-0">
             <div className="lg:grid lg:grid-cols-12 lg:gap-x-0">
               <div className="py-8 lg:col-span-6 lg:flex lg:aspect-square lg:flex-col lg:justify-center lg:py-0">
@@ -39,12 +46,9 @@ export function NewHero() {
               years of experience across product planning, UX, engineering, and delivery.
                   </p>
                   <div className="mt-10 flex items-center gap-x-6">
-                    <a
-                      href="#"
-                      className="rounded-md bg-zinc-900 px-3.5 py-2.5 text-sm font-normal text-white shadow-xs hover:bg-zinc-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200 dark:focus-visible:outline-zinc-100"
-                    >
+                    <Button href="#" variant="secondary">
                       Get started
-                    </a>
+                    </Button>
                     <a
                       href="#"
                       className={`${libreBodoniItalic} text-sm/6 text-zinc-900 dark:text-zinc-100`}

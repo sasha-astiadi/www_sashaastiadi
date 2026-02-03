@@ -1,5 +1,10 @@
 import { ContainerOuter } from '@/components/Container'
-import { Eyebrow, libreBodoniItalic } from '@/components/ui/Texts'
+import {
+  Eyebrow,
+  libreBodoniItalic,
+  newHeroGradientDark,
+  newHeroGradientLight,
+} from '@/components/ui/Texts'
 
 const items = [
   {
@@ -65,12 +70,14 @@ export const SelectedWorks = () => {
   return (
     <div className="lg:pb-12 pb-12">
       <ContainerOuter>
-        <div className="mx-2 overflow-hidden rounded-xl bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 sm:mx-0">
+        <div
+          className={`mx-2 overflow-hidden rounded-xl sm:mx-0 ${newHeroGradientLight} ${newHeroGradientDark}`}
+        >
           <div className="py-12 relative px-4">
             <div className="mx-auto max-w-2xl lg:max-w-6xl">
               <Eyebrow>PORTFOLIO</Eyebrow>
               <p className="mt-2 max-w-2xl text-4xl font-normal tracking-tight text-pretty text-zinc-800 sm:text-5xl dark:text-zinc-100">
-              Real-World  <span className={libreBodoniItalic}>Projects</span>
+                Showcasing Real-World  <span className={libreBodoniItalic}>Projects</span>
               </p>
               <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-8 lg:grid-cols-6 lg:grid-rows-2">
                 {items.map((item) => (

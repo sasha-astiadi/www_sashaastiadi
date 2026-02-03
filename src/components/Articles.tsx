@@ -1,6 +1,11 @@
 import { Card } from '@/components/Card'
 import { Button } from '@/components/Button'
-import { Eyebrow, libreBodoniItalic } from '@/components/ui/Texts'
+import {
+  Eyebrow,
+  libreBodoniItalic,
+  newHeroGradientDark,
+  newHeroGradientLight,
+} from '@/components/ui/Texts'
 import { type ArticleWithSlug } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import Image from 'next/image'
@@ -135,7 +140,9 @@ export function Articles({
   return (
     <div className="flex flex-col gap-12">
       {highlightedItem ? (
-        <div className="rounded-xl bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
+        <div
+          className={`overflow-hidden rounded-xl ${newHeroGradientLight} ${newHeroGradientDark}`}
+        >
           <div className="flex flex-col gap-12 p-6 lg:p-8">
             <HighlightedHeader />
             <Highlighted item={highlightedItem} grouped />

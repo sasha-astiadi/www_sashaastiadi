@@ -1,6 +1,7 @@
 import Image, { type ImageProps } from 'next/image'
 
 import { Button } from '@/components/Button'
+import { newHeroGradientDark, newHeroGradientLight } from '@/components/ui/Texts'
 import logoOurWorld from '@/images/logos/resume/ourworld.jpeg'
 import logoThreeFold from '@/images/logos/resume/threefold.jpeg'
 import logoHere from '@/images/logos/resume/here.jpeg'
@@ -95,7 +96,7 @@ export function Resume() {
   let resume: Array<Role & { bgColor: string }> = [
     {
       company: 'OurWorld Holding',
-      title: 'Web Architect / WebOps Manager',
+      title: 'Web Architect',
       logo: logoOurWorld,
       start: '2023',
       end: {
@@ -139,7 +140,7 @@ export function Resume() {
   ]
 
   return (
-    <div className="rounded-xl bg-white p-6 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
+    <div className={`rounded-xl p-6 ${newHeroGradientLight} ${newHeroGradientDark}`}>
       <h2 className="flex text-base font-normal text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-9 w-9 flex-none" />
         <span className="ml-3">Working Experiences</span>

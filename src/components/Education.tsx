@@ -3,6 +3,7 @@ import Image, { type ImageProps } from 'next/image'
 import logoUdacity from '@/images/education/udacity_logo.jpeg'
 import logoCode from '@/images/education/code_logo.jpeg'
 import logoBLCU from '@/images/education/blcu_logo.jpeg'
+import { newHeroGradientDark, newHeroGradientLight } from '@/components/ui/Texts'
 
 function AcademicCapIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -105,7 +106,7 @@ export function Education() {
   ]
 
   return (
-    <div className="rounded-xl bg-white p-6 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
+    <div className={`rounded-xl p-6 ${newHeroGradientLight} ${newHeroGradientDark}`}>
       <h2 className="flex text-base font-normal text-zinc-900 dark:text-zinc-100">
         <AcademicCapIcon className="h-9 w-9 flex-none" />
         <span className="ml-3">Education</span>

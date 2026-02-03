@@ -2,7 +2,7 @@
 
 import { Fragment, useMemo, useState } from 'react'
 import { Card } from '@/components/Card'
-import { Eyebrow } from '@/components/ui/Texts'
+import { Eyebrow, libreBodoniItalic } from '@/components/ui/Texts'
 import {
   SiTypescript,
   SiJavascript,
@@ -185,7 +185,7 @@ export function TechnologyStack() {
       <div className="mx-auto max-w-4xl text-center">
         <Eyebrow>TECHNOLOGY STACK</Eyebrow>
         <h2 className="text-4xl font-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          Full-stack web & product expertise
+          Full-stack Web <span className={libreBodoniItalic}>Expertise</span>
         </h2>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
           I’m experienced in building and maintaining web applications

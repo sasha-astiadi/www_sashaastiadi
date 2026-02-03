@@ -9,6 +9,7 @@ import { TechnologyStack } from '@/components/TechnologyStack'
 import { SelectedWorks } from '@/components/SelectedWorks'
 import { NewHero } from '@/components/NewHero'
 import { ServicesGrid } from '@/components/ServicesGrid'
+import { CTA } from '@/components/CTA'
 
 
 export default async function Home() {
@@ -30,7 +31,7 @@ export default async function Home() {
         </ContainerOuter>
       </div>
 
-      <ContainerOuter className="mt-12 md:mt-24">
+      <ContainerOuter className="mt-12">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-12 lg:gap-x-0">
           <div className="lg:col-span-8">
             <Articles articles={articles} highlighted />
@@ -42,6 +43,9 @@ export default async function Home() {
           </div>
         </div>
       </ContainerOuter>
+      <div className="mt-12">
+        <CTA />
+      </div>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import { ContainerOuter } from '@/components/Container'
-import { Eyebrow } from '@/components/ui/Texts'
+import { Eyebrow, libreBodoniItalic } from '@/components/ui/Texts'
 
 const items = [
   {
@@ -69,8 +69,8 @@ export const SelectedWorks = () => {
           <div className="py-12 relative px-4">
             <div className="mx-auto max-w-2xl lg:max-w-6xl">
               <Eyebrow>PORTFOLIO</Eyebrow>
-              <p className="mt-2 max-w-xl text-4xl font-normal tracking-tight text-pretty text-zinc-800 sm:text-5xl dark:text-zinc-100">
-                Showcasing Real-World Projects
+              <p className="mt-2 max-w-2xl text-4xl font-normal tracking-tight text-pretty text-zinc-800 sm:text-5xl dark:text-zinc-100">
+              Real-World  <span className={libreBodoniItalic}>Projects</span>
               </p>
               <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-8 lg:grid-cols-6 lg:grid-rows-2">
                 {items.map((item) => (

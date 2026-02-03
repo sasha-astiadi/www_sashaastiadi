@@ -6,6 +6,12 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@layer base {
+  p {
+    @apply font-light;
+  }
+}
+
 @theme {
   --animate-marquee: marquee 30s linear infinite;
   --text-xs: 0.8125rem;

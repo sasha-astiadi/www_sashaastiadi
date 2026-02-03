@@ -1,6 +1,6 @@
 import { Card } from '@/components/Card'
 import { Button } from '@/components/Button'
-import { Eyebrow } from '@/components/ui/Texts'
+import { Eyebrow, libreBodoniItalic } from '@/components/ui/Texts'
 import { type ArticleWithSlug } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import Image from 'next/image'
@@ -38,11 +38,11 @@ function Article({
       as="article"
       className={
         grouped
-          ? 'rounded-md bg-zinc-50 p-6 dark:bg-zinc-800/50 lg:p-8'
-          : 'rounded-xl bg-white p-6 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 lg:p-8'
+          ? 'rounded-md border border-zinc-200/70 bg-zinc-50 p-6 dark:border-zinc-700/50 dark:bg-zinc-800/50 lg:p-8'
+          : 'rounded-xl border border-zinc-200/70 bg-white p-6 ring-1 ring-zinc-100 dark:border-zinc-700/50 dark:bg-zinc-900 dark:ring-zinc-300/20 lg:p-8'
       }
     >
-      <h2 className="text-base font-normal tracking-tight text-zinc-800 dark:text-zinc-100">
+      <h2 className="text-2xl font-normal tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">
         <Link href={`/articles/${article.slug}`} className="relative z-10">
           {article.title}
         </Link>
@@ -75,8 +75,8 @@ function Highlighted({ item, grouped }: { item: HighlightedItem; grouped?: boole
       as="article"
       className={
         grouped
-          ? 'rounded-md bg-zinc-50 p-6 dark:bg-zinc-800/50 lg:p-8'
-          : 'rounded-xl bg-transparent p-6 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 lg:p-8'
+          ? 'rounded-md border border-zinc-200/70 bg-zinc-50 p-6 dark:border-zinc-700/50 dark:bg-zinc-800/50 lg:p-8'
+          : 'rounded-xl border border-zinc-200/70 bg-transparent p-6 ring-1 ring-zinc-100 dark:border-zinc-700/50 dark:bg-zinc-900 dark:ring-zinc-300/20 lg:p-8'
       }
     >
       <Link href={item.href} className="relative z-10 block">
@@ -109,11 +109,11 @@ function HighlightedHeader() {
   return (
     <div>
       <Eyebrow>CASE STUDIES</Eyebrow>
-      <h2 className="text-4xl font-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-        The Process Behind the Product
-      </h2>
-      <div className="mt-4">
-        <Button href="/articles" variant="secondary">
+      <div className="mt-2 flex items-center justify-between gap-6">
+        <h2 className="text-4xl font-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+          The Process Behind the <span className={libreBodoniItalic}>Products</span>
+        </h2>
+        <Button href="/articles" variant="secondary" className="shrink-0">
           View all
         </Button>
       </div>

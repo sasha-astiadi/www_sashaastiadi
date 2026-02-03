@@ -1,11 +1,12 @@
 import Image from 'next/image'
 
 import { Card } from '@/components/Card'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoOurWorld from '@/images/logos/ourworld.svg'
+import logoThreeFold from '@/images/logos/threefold.png'
+import logoMycelium from '@/images/logos/mycelium.svg'
+import logoMbweni from '@/images/logos/mbweni.png'
+import logoGeomind from '@/images/logos/geomind.svg'
+import logoMaisonNoire from '@/images/logos/maison.svg'
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -22,7 +23,7 @@ interface Project {
   name: string
   description: string
   link: { href: string; label: string }
-  logo: typeof logoPlanetaria
+  logo: typeof logoGeomind
 }
 
 const projects: Project[] = [
@@ -34,28 +35,28 @@ const projects: Project[] = [
       href: 'https://www-maison-noire.vercel.app/',
       label: 'maison-noire.vercel.app',
     },
-    logo: logoPlanetaria,
+    logo: logoMaisonNoire,
   },
   {
     name: 'OurWorld',
     description:
       'A decentralized digital ecosystem exploring alternative internet infrastructure, community-owned networks, and new models of digital sovereignty.',
     link: { href: 'https://ourworld.tf', label: 'ourworld.tf' },
-    logo: logoAnimaginary,
+    logo: logoOurWorld,
   },
   {
     name: 'Project Mycelium',
     description:
       'An exploratory project using mycelium as a metaphor for decentralized systems — focusing on networks, interconnection, and emergent behavior.',
     link: { href: 'https://projectmycelium.com', label: 'projectmycelium.com' },
-    logo: logoHelioStream,
+    logo: logoMycelium,
   },
   {
     name: 'ThreeFold',
     description:
       'A decentralized internet infrastructure project enabling people to become their own internet providers through sustainable, community-powered nodes.',
     link: { href: 'https://threefold.io', label: 'threefold.io' },
-    logo: logoCosmos,
+    logo: logoThreeFold,
   },
   {
     name: 'Mbweni Ruins & Gardens',
@@ -65,14 +66,14 @@ const projects: Project[] = [
       href: 'https://www.mbweniruinsandgardens.com/',
       label: 'mbweniruinsandgardens.com',
     },
-    logo: logoOpenShuttle,
+    logo: logoMbweni,
   },
   {
     name: 'Geomind',
     description:
       'A new generation of decentralized cloud. Faster, greener, smarter. Deploy your own datacenter, scale globally, and own your cloud, turning idle capacity into profit.',
     link: { href: 'https://geomind.io', label: 'geomind.io' },
-    logo: logoPlanetaria,
+    logo: logoGeomind,
   },
 ]
 

@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -9,6 +11,14 @@ import {
   XIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.webp'
+import { ContainerInner, ContainerOuter } from '@/components/Container'
+import { SocialLink } from '@/components/SocialLink'
+import { FlipWords } from '@/components/ui/flip-words'
+import {
+  libreBodoniItalic,
+  newHeroGradientDark,
+  newHeroGradientLight,
+} from '@/components/ui/Texts'
 
 function SocialLink({
   className,
@@ -63,28 +73,43 @@ export function AboutPortrait() {
 export function AboutBio() {
   return (
     <div className="lg:order-first lg:row-span-2">
-      <h1 className="text-4xlfont-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-        I'm Sasha Astiadi. Web Architect, Developer & Product Consultant.
-      </h1>
-      <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-        <p>
-          With a strong background in UX Design and Product Management, for
-          over five years, I've worked across web operations, product strategy,
-          and hands-on development, helping teams design, build, and scale
-          user-centric web applications.
-        </p>
-        <p>
-          I combine technical execution with a deep understanding of user
-          behavior, informed by continuous UX research and product thinking.
-          I've collaborated with global organizations including VW,
-          Goethe-Institut, Audi, Mozilla, Porsche, and HERE Technologies, and
-          most recently spent five years working across Web3, crypto, and cloud
-          infrastructure at OurWorld and ThreeFold.
-        </p>
-        <p>
-          Today, I work as a freelance web consultant, supporting projects
-          end-to-end, from product planning and UX to production-grade frontend architecture and delivery.
-        </p>
+      <div
+        className={`mx-2 overflow-hidden rounded-xl py-12 px-12 lg:mx-0 ${newHeroGradientLight} ${newHeroGradientDark}`}
+      >
+        <h1 className="text-4xl font-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+          Hi. I'm Sasha Astiadi. <br></br>
+          I'm a{' '}
+          <span className={libreBodoniItalic}>
+            Web{' '}
+            <FlipWords
+              words={['Architect', 'Designer', 'Developer']}
+              className="px-0"
+            />
+          </span>
+          ,
+          <br></br>
+          and a digital product consultant.
+        </h1>
+        <div className="mt-6 space-y-7 text-base font-light text-zinc-600 dark:text-zinc-400">
+          <p>
+            With a strong background in UX Design and Product Management, for
+            over five years, I've worked across web operations, product strategy,
+            and hands-on development, helping teams design, build, and scale
+            user-centric web applications.
+          </p>
+          <p>
+            I combine technical execution with a deep understanding of user
+            behavior, informed by continuous UX research and product thinking.
+            I've collaborated with global organizations including VW,
+            Goethe-Institut, Audi, Mozilla, Porsche, and HERE Technologies, and
+            most recently spent five years working across Web3, crypto, and cloud
+            infrastructure at OurWorld and ThreeFold.
+          </p>
+          <p>
+            Today, I work as a freelance web consultant, supporting projects
+            end-to-end, from product planning and UX to production-grade frontend architecture and delivery.
+          </p>
+        </div>
       </div>
     </div>
   )

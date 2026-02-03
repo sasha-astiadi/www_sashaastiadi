@@ -36,73 +36,131 @@ function Tool({
 export function UsesList() {
   return (
     <div className="space-y-20">
+      {/* WORKSTATION */}
       <ToolsSection title="Workstation">
         <Tool title='16" MacBook Pro, M1 Max, 64GB RAM (2021)'>
-          I was using an Intel-based 16" MacBook Pro prior to this and the
-          difference is night and day. I've never heard the fans turn on a
-          single time, even under the incredibly heavy loads I put it through
-          with our various launch simulations.
+          I upgraded from an Intel-based 16" MacBook Pro and the difference was
+          immediate and dramatic. Silent under load, incredibly fast, and
+          reliable even during heavy builds, simulations, and parallel dev
+          workflows.
         </Tool>
+
         <Tool title="Apple Pro Display XDR (Standard Glass)">
-          The only display on the market if you want something HiDPI and bigger
-          than 27". When you're working at planetary scale, every pixel you can
-          get counts.
+          The only display I’ve used that truly feels future-proof. The screen
+          real estate and pixel density make complex interfaces, timelines, and
+          dense layouts far easier to reason about.
         </Tool>
+
         <Tool title="IBM Model M SSK Industrial Keyboard">
-          They don't make keyboards the way they used to. I buy these any time I
-          see them go up for sale and keep them in storage in case I need parts
-          or need to retire my main.
+          Overbuilt in the best possible way. I collect and maintain these
+          because nothing else comes close in terms of feel, durability, and
+          typing confidence.
         </Tool>
+
         <Tool title="Apple Magic Trackpad">
-          Something about all the gestures makes me feel like a wizard with
-          special powers. I really like feeling like a wizard with special
-          powers.
+          Multi-touch gestures feel second nature at this point. It makes
+          navigating large design files and complex UIs feel fluid and almost
+          playful.
         </Tool>
+
         <Tool title="Herman Miller Aeron Chair">
-          If I'm going to slouch in the worst ergonomic position imaginable all
-          day, I might as well do it in an expensive chair.
+          If I’m going to sit for long stretches of deep work, I want something
+          that survives bad posture days without punishing me later.
         </Tool>
       </ToolsSection>
-      <ToolsSection title="Development tools">
-        <Tool title="Sublime Text 4">
-          I don't care if it's missing all of the fancy IDE features everyone
-          else relies on, Sublime Text is still the best text editor ever made.
+
+      {/* SOFTWARE DEVELOPMENT */}
+      <ToolsSection title="Software Development & Engineering">
+        <Tool title="TypeScript / JavaScript">
+          My default language stack for building maintainable, scalable web
+          applications. Strong typing where it matters, flexibility where it
+          helps.
         </Tool>
-        <Tool title="iTerm2">
-          I'm honestly not even sure what features I get with this that aren't
-          just part of the macOS Terminal but it's what I use.
+
+        <Tool title="React, Next.js, Astro">
+          React for rich client-side interactions, Next.js for full-stack
+          production apps, and Astro when performance, content, and simplicity
+          are the priority.
         </Tool>
-        <Tool title="TablePlus">
-          Great software for working with databases. Has saved me from building
-          about a thousand admin interfaces for my various projects over the
-          years.
+
+        <Tool title="Vite & Node.js">
+          Vite for fast iteration and instant feedback loops, Node.js as the
+          backbone for tooling, APIs, and build pipelines.
+        </Tool>
+
+        <Tool title="CSS & Tailwind CSS">
+          I use Tailwind for speed and consistency, paired with solid CSS
+          fundamentals when custom layout, animation, or fine-grained control
+          is required.
+        </Tool>
+
+        <Tool title="WordPress, Netlify, Vercel">
+          WordPress when clients need editorial flexibility, Netlify and Vercel
+          for modern hosting, previews, and CI-driven deployments.
         </Tool>
       </ToolsSection>
-      <ToolsSection title="Design">
+
+      {/* UX DESIGN */}
+      <ToolsSection title="UX Design">
         <Tool title="Figma">
-          We started using Figma as just a design tool but now it's become our
-          virtual whiteboard for the entire company. Never would have expected
-          the collaboration features to be the real hook.
+          My primary design environment — from wireframes to polished UI and
+          collaborative design systems. It’s also where most product thinking
+          happens early on.
+        </Tool>
+
+        <Tool title="Sketch & Webflow">
+          Sketch for legacy projects and asset-heavy workflows. Webflow when
+          visual iteration and rapid prototyping need to move fast without
+          engineering overhead.
+        </Tool>
+
+        <Tool title="Adobe Photoshop, Illustrator, InDesign">
+          Used when precision matters — image editing, vector work, brand
+          assets, and long-form layout that goes beyond interface design.
         </Tool>
       </ToolsSection>
-      <ToolsSection title="Productivity">
-        <Tool title="Alfred">
-          It's not the newest kid on the block but it's still the fastest. The
-          Sublime Text of the application launcher world.
+
+      {/* UX RESEARCH */}
+      <ToolsSection title="UX Research">
+        <Tool title="Miro">
+          My go-to tool for mapping user journeys, running workshops, and
+          turning messy research into structured insights.
         </Tool>
-        <Tool title="Reflect">
-          Using a daily notes system instead of trying to keep things organized
-          by topics has been super powerful for me. And with Reflect, it's still
-          easy for me to keep all of that stuff discoverable by topic even
-          though all of my writing happens in the daily note.
+
+        <Tool title="Balsamiq, Axure, InVision">
+          Low- to mid-fidelity prototyping tools for quickly validating ideas
+          before committing to higher-cost design or development work.
         </Tool>
-        <Tool title="SavvyCal">
-          Great tool for scheduling meetings while protecting my calendar and
-          making sure I still have lots of time for deep work during the week.
+
+        <Tool title="Hotjar">
+          Essential for understanding real user behavior — heatmaps, recordings,
+          and feedback loops that challenge assumptions.
         </Tool>
-        <Tool title="Focus">
-          Simple tool for blocking distracting websites when I need to just do
-          the work and get some momentum going.
+      </ToolsSection>
+
+      {/* PRODUCT MANAGEMENT */}
+      <ToolsSection title="Product Management">
+        <Tool title="Jira, Asana, Trello">
+          I adapt the tool to the team, not the other way around. These cover
+          everything from structured agile delivery to lightweight planning.
+        </Tool>
+
+        <Tool title="Notion">
+          A flexible knowledge base for product docs, specs, roadmaps, and
+          internal alignment — especially useful across distributed teams.
+        </Tool>
+      </ToolsSection>
+
+      {/* DELIVERY & COLLABORATION */}
+      <ToolsSection title="Delivery & Collaboration">
+        <Tool title="Git, GitHub, Gitea, Forgejo">
+          Version control is non-negotiable. I’m comfortable across GitHub and
+          self-hosted alternatives, depending on project needs and values.
+        </Tool>
+
+        <Tool title="Slack">
+          The default communication layer for most teams I work with — useful
+          when paired with clear boundaries and async-friendly workflows.
         </Tool>
       </ToolsSection>
     </div>

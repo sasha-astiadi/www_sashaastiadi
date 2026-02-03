@@ -1,11 +1,12 @@
 import { type Metadata } from 'next'
 
-import { Container } from '@/components/Container'
+import { ContainerOuter } from '@/components/Container'
 import {
   AboutPortrait,
   AboutBio,
   AboutSocialLinks,
 } from '@/components/AboutContent'
+import { RevealGroup, RevealSection } from '@/components/InteractiveReveal'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -15,12 +16,24 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <Container className="mt-16 sm:mt-32">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-        <AboutPortrait />
-        <AboutBio />
-        <AboutSocialLinks />
+    <ContainerOuter className="mt-12 sm:mt-24 sm:px-6 lg:px-0">
+      <div className="relative px-3 sm:px-6 lg:px-0">
+        <div className="mx-auto max-w-6xl">
+          <RevealGroup>
+            <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+              <RevealSection id="about-portrait">
+                <AboutPortrait />
+              </RevealSection>
+              <RevealSection id="about-bio" className="lg:order-first lg:row-span-2">
+                <AboutBio />
+              </RevealSection>
+              <RevealSection id="about-links">
+                <AboutSocialLinks />
+              </RevealSection>
+            </div>
+          </RevealGroup>
+        </div>
       </div>
-    </Container>
+    </ContainerOuter>
   )
 }

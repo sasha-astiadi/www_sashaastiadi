@@ -39,7 +39,7 @@ function Appearance({
   category: string
 }) {
   return (
-    <div className="relative aspect-square w-full overflow-hidden rounded-2xl group">
+    <div className="relative aspect-square w-full overflow-hidden rounded-md group">
       {/* Background image */}
       {typeof image === 'string' ? (
         <img

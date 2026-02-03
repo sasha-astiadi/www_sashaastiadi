@@ -26,7 +26,7 @@ export function Hero() {
     <Container className="mt-9">
       <div className="max-w-2xl">
         <h1 className="lg:mt-24 mt-12 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          Hi, I'm Sasha. I plan, design and develop websites that scale.
+          Hi, I'm Sasha. I design and build high-performing websites that scale.
         </h1>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
          As a digital prodcut consultant specializing in web development projects, I help teams plan, orchestrate, and execute clear, scalable web applications; drawing on over five years of experience across product planning, UX, design thinking, web architecture, engineering, and delivery.

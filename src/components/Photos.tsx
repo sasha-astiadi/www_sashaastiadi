@@ -29,57 +29,52 @@ export function Photos() {
       {/* Featured Case Study */}
       <div className="mx-auto max-w-7xl mt-16 mb-16">
         <Link href="/projects/ourworld-rebranding" className="group block">
-          <div className="relative aspect-video overflow-hidden rounded-2xl">
-            {/* Background Image */}
+          {/* Image */}
+          <div className="relative overflow-hidden rounded-md mb-8">
             <Image
               src={owAfterImage}
               alt="OurWorld rebranding case study"
-              fill
-              className="absolute inset-0 object-cover transition-transform group-hover:scale-105"
+              className="w-full h-auto transition-transform group-hover:scale-105"
             />
+          </div>
+          
+          {/* Content Below Image */}
+          <div className="max-w-4xl mx-auto">
+            <div className="mb-4 flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400">
+              <span className="rounded-full border border-zinc-300 dark:border-zinc-600 px-3 py-1 text-xs uppercase tracking-wide">
+                Brand & Digital Identity
+              </span>
+              <span>OurWorld</span>
+              <span>•</span>
+              <span>2025</span>
+            </div>
             
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+            <h3 className="text-3xl font-bold text-zinc-800 dark:text-zinc-100 sm:text-4xl lg:text-5xl">
+              Why We Chose to Reimagine OurWorld
+            </h3>
             
-            {/* Content */}
-            <div className="relative z-10 flex h-full flex-col justify-end p-8 lg:p-12">
-              <div className="max-w-2xl">
-                <div className="mb-4 flex items-center gap-3 text-sm text-white/70">
-                  <span className="rounded-full border border-white/20 px-3 py-1 text-xs uppercase tracking-wide">
-                    Brand & Digital Identity
-                  </span>
-                  <span>OurWorld</span>
-                  <span>•</span>
-                  <span>2025</span>
-                </div>
-                
-                <h3 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-                  Why We Chose to Reimagine OurWorld
-                </h3>
-                
-                <p className="mt-4 text-lg text-white/90 sm:text-xl">
-                  As OurWorld evolved into a global ecosystem of ventures, people, and digital infrastructure, our original brand no longer reflected the scale, trust, and clarity of our mission.
-                </p>
-                
-                <div className="mt-6 flex items-center text-white/80 transition group-hover:text-white">
-                  <span className="text-sm font-medium">Read case study</span>
-                  <svg className="ml-2 h-4 w-4 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-              </div>
+            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400 sm:text-xl">
+              As OurWorld evolved into a global ecosystem of ventures, people, and digital infrastructure, our original brand no longer reflected the scale, trust, and clarity of our mission.
+            </p>
+            
+            <div className="mt-6 flex items-center text-zinc-600 dark:text-zinc-400 transition group-hover:text-zinc-800 dark:group-hover:text-zinc-200">
+              <span className="text-sm font-medium">Read case study</span>
+              <svg className="ml-2 h-4 w-4 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </div>
           </div>
         </Link>
       </div>
       
+      {/* Image Gallery - Hidden for now
       <div className="mt-16 -my-4 overflow-hidden py-4">
         <div className="flex animate-marquee gap-5 sm:gap-8">
           {[...images, ...images].map((image, imageIndex) => (
             <div
               key={`${image.src}-${imageIndex}`}
               className={clsx(
-                'relative w-44 flex-none overflow-hidden rounded-lg bg-zinc-100 sm:w-72 lg:w-100 sm:rounded-2xl dark:bg-zinc-800',
+                'relative w-44 flex-none overflow-hidden rounded-lg bg-zinc-100 sm:w-72 lg:w-100 sm:rounded-md dark:bg-zinc-800',
                 rotations[imageIndex % rotations.length],
               )}
             >
@@ -95,6 +90,7 @@ export function Photos() {
           ))}
         </div>
       </div>
+      */}
     </div>
   )
 }

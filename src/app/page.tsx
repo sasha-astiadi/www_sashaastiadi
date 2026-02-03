@@ -7,14 +7,18 @@ import { Resume } from '@/components/Resume'
 import { getAllArticles } from '@/lib/articles'
 import LogoClouds from '@/components/LogoClouds'
 import { TechnologyStack } from '@/components/TechnologyStack'
+import { SelectedWorks } from '@/components/SelectedWorks'
+import { NewHero } from '@/components/NewHero'
+
 
 export default async function Home() {
   let articles = (await getAllArticles()).slice(0, 4)
 
   return (
     <>
-      <Hero />
+      <NewHero />
       <LogoClouds />
+      <SelectedWorks />
       <Container className="mt-9">
         <TechnologyStack />
       </Container>

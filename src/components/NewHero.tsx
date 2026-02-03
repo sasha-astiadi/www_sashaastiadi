@@ -1,6 +1,8 @@
 import Image from 'next/image'
 
 import { ContainerOuter } from '@/components/Container'
+import { libreBodoni } from '@/app/layout'
+
 import heroImage from '@/images/hero.webp'
 
 export function NewHero() {
@@ -15,14 +17,18 @@ export function NewHero() {
                   <div className="hidden sm:mt-32 sm:flex lg:mt-0">
                     <div className="relative rounded-full px-3 py-1 text-sm/6 text-zinc-600 ring-1 ring-zinc-900/10 hover:ring-zinc-900/20 dark:text-zinc-400 dark:ring-white/10 dark:hover:ring-white/20">
                       Ready to step up your web performance?{" "}
-                      <a href="#" className="font-semibold whitespace-nowrap text-zinc-900 dark:text-zinc-100">
+                      <a href="#" className="font-normal whitespace-nowrap text-zinc-900 dark:text-zinc-100">
                         <span aria-hidden="true" className="absolute inset-0" />
                         Book a call <span aria-hidden="true">&rarr;</span>
                       </a>
                     </div>
                   </div>
-                  <h1 className="text-4xl font-semibold tracking-tight text-pretty text-zinc-900 sm:mt-10 mt-4 sm:text-5xl dark:text-zinc-100">
-                    Design & build high-performing websites that scale.
+                  <h1 className="mt-4 text-5xl font-normal tracking-tight text-pretty text-zinc-900 sm:mt-10 sm:text-6xl dark:text-zinc-100">
+                    Design & Build High-performing Websites
+                    <br />
+                    <span className={`${libreBodoni.className} text-[1.2em] font-normal italic`}>
+                      that scale.
+                    </span>
                   </h1>
                   <p className="mt-6 text-lg font-light text-pretty text-zinc-600 sm:text-lg/8 dark:text-zinc-400">
                     As a consultant specializing in web development projects, I help teams
@@ -32,11 +38,11 @@ export function NewHero() {
                   <div className="mt-10 flex items-center gap-x-6">
                     <a
                       href="#"
-                      className="rounded-md bg-zinc-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-zinc-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200 dark:focus-visible:outline-zinc-100"
+                      className="rounded-md bg-zinc-900 px-3.5 py-2.5 text-sm font-normal text-white shadow-xs hover:bg-zinc-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200 dark:focus-visible:outline-zinc-100"
                     >
                       Get started
                     </a>
-                    <a href="#" className="text-sm/6 font-semibold text-zinc-900 dark:text-zinc-100">
+                    <a href="#" className="text-sm/6 font-normal text-zinc-900 dark:text-zinc-100">
                       Learn more <span aria-hidden="true">→</span>
                     </a>
                   </div>

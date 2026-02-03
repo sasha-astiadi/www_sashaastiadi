@@ -29,7 +29,7 @@ export function Newsletter() {
       action="/thank-you"
       className="rounded-md border border-zinc-100 p-6 dark:border-zinc-700/40"
     >
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+      <h2 className="flex text-sm font-normal text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-9 w-9 flex-none" />
         <span className="ml-3">Stay up to date</span>
       </h2>

@@ -1,6 +1,4 @@
-import { Container, ContainerOuter } from '@/components/Container'
-import { Hero } from '@/components/Hero'
-import { HighlightedCase } from '@/components/HighlightedCase'
+import { ContainerOuter } from '@/components/Container'
 import { Articles } from '@/components/Articles'
 import { Education } from '@/components/Education'
 import { WorkingLanguages } from '@/components/WorkingLanguages'
@@ -10,12 +8,11 @@ import LogoClouds from '@/components/LogoClouds'
 import { TechnologyStack } from '@/components/TechnologyStack'
 import { SelectedWorks } from '@/components/SelectedWorks'
 import { NewHero } from '@/components/NewHero'
-import { HowItWorks } from '@/components/HowItWorks'
 import { ServicesGrid } from '@/components/ServicesGrid'
 
 
 export default async function Home() {
-  let articles = (await getAllArticles()).slice(0, 4)
+  let articles = (await getAllArticles()).slice(0, 1)
 
   return (
     <>
@@ -33,14 +30,12 @@ export default async function Home() {
         </ContainerOuter>
       </div>
 
-      <ContainerOuter className="mt-9">
-        <HighlightedCase />
-      </ContainerOuter>
-
       <ContainerOuter className="mt-12 md:mt-24">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <Articles articles={articles} />
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
+        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-12 lg:gap-x-0">
+          <div className="lg:col-span-8">
+            <Articles articles={articles} highlighted />
+          </div>
+          <div className="space-y-10 lg:col-span-4 lg:pl-4 xl:pl-8">
             <WorkingLanguages />
             <Education />
             <Resume />

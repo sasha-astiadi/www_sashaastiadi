@@ -44,7 +44,7 @@ export function WorkingLanguages() {
 
   return (
     <div className="rounded-xl bg-white p-6 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+      <h2 className="flex text-sm font-normal text-zinc-900 dark:text-zinc-100">
         <TbLanguage className="h-9 w-9 flex-none text-[#9F9FA9] dark:text-[#71717C]" />
         <span className="ml-3">Working Languages</span>
       </h2>

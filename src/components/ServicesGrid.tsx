@@ -73,7 +73,7 @@ export const ServicesGrid = () => {
                       />
                     </div>
                     <div>
-                      <p className="text-lg/8 font-semibold text-zinc-800 dark:text-zinc-100">
+                      <p className="text-lg/8 font-normal text-zinc-800 dark:text-zinc-100">
                         {service.title}
                       </p>
                       <p className="mt-1 text-sm/5 text-zinc-600 dark:text-zinc-400">

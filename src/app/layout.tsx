@@ -1,9 +1,23 @@
 import { type Metadata } from 'next'
+import { Libre_Caslon_Text } from 'next/font/google'
+import { Libre_Bodoni } from 'next/font/google'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
+
+export const libreCaslonText = Libre_Caslon_Text({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  style: ['normal', 'italic'],
+})
+
+export const libreBodoni = Libre_Bodoni({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+})
 
 export const metadata: Metadata = {
   title: {

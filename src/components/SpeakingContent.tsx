@@ -69,7 +69,7 @@ function Appearance({
 
         {/* Middle */}
         <div>
-          <h3 className="text-xl font-semibold leading-snug text-white">
+          <h3 className="text-xl font-normal leading-snug text-white">
             {title}
           </h3>
 

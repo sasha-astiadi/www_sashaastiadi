@@ -67,8 +67,8 @@ export const SelectedWorks = () => {
         <div className="mx-2 overflow-hidden rounded-xl bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 sm:mx-0">
           <div className="py-12 relative px-4">
             <div className="mx-auto max-w-2xl lg:max-w-6xl">
-              <h2 className="text-base/7 font-semibold text-zinc-600 dark:text-zinc-400">PORTFOLIO</h2>
-              <p className="mt-2 max-w-lg text-4xl font-semibold tracking-tight text-pretty text-zinc-800 sm:text-5xl dark:text-zinc-100">
+              <h2 className="text-base/7 font-normal text-zinc-600 dark:text-zinc-400">PORTFOLIO</h2>
+              <p className="mt-2 max-w-lg text-4xl font-normal tracking-tight text-pretty text-zinc-800 sm:text-5xl dark:text-zinc-100">
                 Selected Works
               </p>
               <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-8 lg:grid-cols-6 lg:grid-rows-2">
@@ -82,7 +82,7 @@ export const SelectedWorks = () => {
                     >
                       <img alt="" src={item.imgSrc} className={`${item.imgClassName} object-center!`} />
                       {/*  <div className="p-10 pt-4 lg:px-6">
-                        <h3 className="text-sm/4 font-semibold text-zinc-600 dark:text-zinc-400">{item.eyebrow}</h3>
+                        <h3 className="text-sm/4 font-normal text-zinc-600 dark:text-zinc-400">{item.eyebrow}</h3>
                         <p className="mt-2 text-lg font-medium tracking-tight text-zinc-800 dark:text-zinc-100">
                           {item.title}
                         </p>

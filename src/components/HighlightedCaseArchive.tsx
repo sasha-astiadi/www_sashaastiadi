@@ -12,7 +12,7 @@ import owAfterImage from '@/images/projects/ourworld/ow_after.png'
 
 const images = [image1, image2, image3, image4, image5, image6]
 
-export function HighlightedCase() {
+export function HighlightedCaseArchive() {
   let rotations = ['rotate-1', '-rotate-1', 'rotate-1', '-rotate-1', 'rotate-1', '-rotate-1']
 
   return (

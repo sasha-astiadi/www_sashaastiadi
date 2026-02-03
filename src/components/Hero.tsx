@@ -25,7 +25,7 @@ export function Hero() {
   return (
     <Container className="mt-9">
       <div className="max-w-2xl">
-        <h1 className="lg:mt-24 mt-12 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+        <h1 className="lg:mt-24 mt-12 text-4xlfont-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
           Hi, I'm Sasha. I design and build high-performing websites that scale.
         </h1>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">

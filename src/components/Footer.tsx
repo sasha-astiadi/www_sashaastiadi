@@ -27,7 +27,7 @@ export function Footer() {
           <div className="mx-2 overflow-hidden rounded-xl bg-white py-8 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 sm:mx-0">
             <ContainerOuter>
               <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-                <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
+                <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-normal text-zinc-800 dark:text-zinc-200">
                   <NavLink href="/about">About</NavLink>
                   <NavLink href="/projects">Projects</NavLink>
                   <NavLink href="/speaking">Speaking</NavLink>

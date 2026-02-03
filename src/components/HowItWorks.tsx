@@ -34,10 +34,10 @@ export const HowItWorks = () => {
           <div className="relative px-4 py-12">
             <div className="mx-auto max-w-5xl lg:max-w-6xl">
               {/* Section header */}
-              <h2 className="text-base/7 font-semibold text-zinc-600 dark:text-zinc-400">
+              <h2 className="text-base/7 font-normal text-zinc-600 dark:text-zinc-400">
                 PROCESS
               </h2>
-              <p className="mt-2 max-w-2xl text-4xl font-semibold tracking-tight text-pretty text-zinc-800 sm:text-5xl dark:text-zinc-100">
+              <p className="mt-2 max-w-2xl text-4xl font-normal tracking-tight text-pretty text-zinc-800 sm:text-5xl dark:text-zinc-100">
                 How I work
               </p>
               <p className="mt-4 max-w-5xl text-lg/8 text-zinc-600 dark:text-zinc-400">
@@ -52,7 +52,7 @@ export const HowItWorks = () => {
                     key={step.name}
                     className="relative rounded-xl bg-zinc-100 p-6 dark:bg-zinc-800"
                   >
-                    <dt className="flex items-center gap-x-3 text-lg font-semibold text-zinc-800 dark:text-zinc-100">
+                    <dt className="flex items-center gap-x-3 text-lg font-normal text-zinc-800 dark:text-zinc-100">
                       <step.icon
                         className="h-7 w-7 flex-none text-zinc-600 dark:text-zinc-400"
                         aria-hidden="true"

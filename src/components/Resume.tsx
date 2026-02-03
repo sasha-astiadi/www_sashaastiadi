@@ -140,7 +140,7 @@ export function Resume() {
 
   return (
     <div className="rounded-xl bg-white p-6 ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20">
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+      <h2 className="flex text-sm font-normal text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-9 w-9 flex-none" />
         <span className="ml-3">Work</span>
       </h2>

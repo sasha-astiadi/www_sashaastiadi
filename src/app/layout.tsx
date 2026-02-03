@@ -5,10 +5,10 @@ import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://sashaastiadi.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://sashaastiadi.site'
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL('https://sashaastiadi.site'),
   title: {
     template: '%s - Sasha Astiadi',
     default: 'Sasha Astiadi - Web Developer & Frontend Engineer',

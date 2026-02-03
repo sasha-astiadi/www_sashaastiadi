@@ -3,16 +3,16 @@ import { libreBodoni } from '@/app/fonts'
 export const libreBodoniItalic = `${libreBodoni.className} font-normal italic`
 
 export const newHeroGradientLight =
-  'bg-linear-to-b from-[#ffffff] to-[#ffffff]/20'
+  'bg-noise bg-linear-to-b from-[#ffffff] to-[#ffffff]/25'
 
 export const newHeroGradientDark =
-  'dark:bg-linear-to-b dark:from-[#18181B] dark:to-[#18181B]/10'
+  'bg-noise dark:bg-linear-to-b dark:from-[#18181B] dark:to-[#18181B]/10'
 
 export const newHeroGradientLightDiagonal =
-  'bg-linear-to-br from-[#ffffff] to-[#ffffff]/20'
+  'bg-noise bg-linear-to-br from-[#ffffff] to-[#ffffff]/25'
 
 export const newHeroGradientDarkDiagonal =
-  'dark:bg-linear-to-br dark:from-[#18181B] dark:to-[#18181B]/10'
+  'bg-noise dark:bg-linear-to-br dark:from-[#18181B] dark:to-[#18181B]/10'
 
 export function Eyebrow({ className, ...props }: React.ComponentPropsWithoutRef<'h2'>) {
   return (

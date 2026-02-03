@@ -19,10 +19,10 @@ export function Photos() {
     <div className="mt-16 lg:mt-24">
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          Selected projects & case studies
+          Case Studies
         </h2>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          A selection of projects where I’ve helped teams plan, design, and build scalable web web applications; spanning product strategy, UX, and implementation across startups, NGOs, and global organizations.
+          A selection of written reports where I’ve helped teams plan, design, and build scalable web web applications; spanning product strategy, UX, and implementation across startups, NGOs, and global organizations.
         </p>
       </div>
 

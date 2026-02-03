@@ -9,6 +9,8 @@ import LogoClouds from '@/components/LogoClouds'
 import { TechnologyStack } from '@/components/TechnologyStack'
 import { SelectedWorks } from '@/components/SelectedWorks'
 import { NewHero } from '@/components/NewHero'
+import { HowItWorks } from '@/components/HowItWorks'
+import { ServicesGrid } from '@/components/ServicesGrid'
 
 
 export default async function Home() {
@@ -18,6 +20,7 @@ export default async function Home() {
     <>
       <NewHero />
       <LogoClouds />
+      <ServicesGrid />
       <SelectedWorks />
       <div className="mt-9">
         <ContainerOuter>
@@ -28,7 +31,8 @@ export default async function Home() {
           </div>
         </ContainerOuter>
       </div>
-       <Container className="mt-9">
+
+      <Container className="mt-9">
         <Photos />
       </Container>
 

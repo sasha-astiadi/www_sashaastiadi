@@ -1,4 +1,8 @@
+'use client'
+
 import { ContainerOuter } from '@/components/Container'
+import { FadeWord } from '@/components/ui/fade-word'
+import { useRevealIsActive } from '@/components/InteractiveReveal'
 import {
   Eyebrow,
   libreBodoniItalic,
@@ -67,6 +71,8 @@ const items = [
 ]
 
 export const SelectedWorks = () => {
+  let isActive = useRevealIsActive('works')
+
   return (
     <div className="lg:pb-12 pb-12">
       <ContainerOuter>
@@ -77,7 +83,12 @@ export const SelectedWorks = () => {
             <div className="mx-auto max-w-2xl lg:max-w-6xl">
               <Eyebrow>PORTFOLIO</Eyebrow>
               <p className="mt-2 max-w-2xl text-4xl font-normal tracking-tight text-pretty text-zinc-800 sm:text-5xl dark:text-zinc-100">
-                Showcasing Real-World  <span className={libreBodoniItalic}>Projects</span>
+                Showcasing Real-World{' '}
+                <FadeWord
+                  word="Projects"
+                  className={libreBodoniItalic}
+                  playTrigger={isActive}
+                />
               </p>
               <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-8 lg:grid-cols-6 lg:grid-rows-2">
                 {items.map((item) => (

@@ -3,6 +3,8 @@
 import { Fragment, useMemo, useState } from 'react'
 import { Card } from '@/components/Card'
 import { Eyebrow, libreBodoniItalic } from '@/components/ui/Texts'
+import { FadeWord } from '@/components/ui/fade-word'
+import { useRevealIsActive } from '@/components/InteractiveReveal'
 import {
   SiTypescript,
   SiJavascript,
@@ -178,6 +180,8 @@ function ToolCard({ tool }: { tool: Tool }) {
 export function TechnologyStack() {
   const [activeCategory, setActiveCategory] = useState(categories[0].name)
 
+  let isActive = useRevealIsActive('tech')
+
   const active = categories.find((c) => c.name === activeCategory)
 
   return (
@@ -185,7 +189,12 @@ export function TechnologyStack() {
       <div className="mx-auto max-w-4xl text-center">
         <Eyebrow>TECHNOLOGY STACK</Eyebrow>
         <h2 className="text-4xl font-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          Full-stack Web <span className={libreBodoniItalic}>Expertise</span>
+          Full-stack Web{' '}
+          <FadeWord
+            word="Expertise"
+            className={libreBodoniItalic}
+            playTrigger={isActive}
+          />
         </h2>
       </div>
 

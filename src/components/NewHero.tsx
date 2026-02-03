@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import { ContainerOuter } from '@/components/Container'
 import { Button } from '@/components/Button'
+import { FlipWords } from '@/components/ui/flip-words'
 import {
   libreBodoniItalic,
   newHeroGradientDark,
@@ -37,7 +38,12 @@ export function NewHero() {
                     Design & Build High-performing Websites
                     <br />
                     <span className={`${libreBodoniItalic} text-[1.2em]`}>
-                      that scale.
+                      that{' '}
+                      <FlipWords
+                        words={['scale', 'grow', 'perform', 'convert', 'last']}
+                        className="px-0"
+                      />
+                      .
                     </span>
                   </h1>
                   <p className="mt-6 text-lg font-light text-pretty text-zinc-600 sm:text-lg/8 dark:text-zinc-400">

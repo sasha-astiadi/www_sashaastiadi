@@ -1,3 +1,5 @@
+'use client'
+
 import { Card } from '@/components/Card'
 import { Button } from '@/components/Button'
 import {
@@ -8,6 +10,8 @@ import {
 } from '@/components/ui/Texts'
 import { type ArticleWithSlug } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
+import { useRevealIsActive } from '@/components/InteractiveReveal'
+import { FadeWord } from '@/components/ui/fade-word'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { StaticImageData } from 'next/image'
@@ -111,12 +115,19 @@ function Highlighted({ item, grouped }: { item: HighlightedItem; grouped?: boole
 }
 
 function HighlightedHeader() {
+  let isActive = useRevealIsActive('articles')
+
   return (
     <div>
       <Eyebrow>CASE STUDIES</Eyebrow>
       <div className="mt-2 flex items-center justify-between gap-6">
         <h2 className="text-4xl font-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          The Process Behind the <span className={libreBodoniItalic}>Products</span>
+          The Process Behind the{' '}
+          <FadeWord
+            word="Products"
+            className={libreBodoniItalic}
+            playTrigger={isActive}
+          />
         </h2>
         <Button href="/articles" variant="secondary" className="shrink-0">
           View all

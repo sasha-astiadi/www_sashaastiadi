@@ -37,7 +37,7 @@ export default async function Home() {
         <HighlightedCase />
       </ContainerOuter>
 
-      <Container className="mt-12 md:mt-24">
+      <ContainerOuter className="mt-12 md:mt-24">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <Articles articles={articles} />
           <div className="space-y-10 lg:pl-16 xl:pl-24">
@@ -46,7 +46,7 @@ export default async function Home() {
             <Resume />
           </div>
         </div>
-      </Container>
+      </ContainerOuter>
     </>
   )
 }

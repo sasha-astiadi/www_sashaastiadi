@@ -162,12 +162,14 @@ const categories: Category[] = [
 function ToolCard({ tool }: { tool: Tool }) {
   return (
     <Card as="li">
-      <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <tool.Icon className="h-6 w-6 text-zinc-800 dark:text-zinc-100" />
+      <div className="flex flex-col items-center text-center">
+        <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          <tool.Icon className="h-6 w-6 text-zinc-800 dark:text-zinc-100" />
+        </div>
+        <h2 className="mt-2 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+          {tool.name}
+        </h2>
       </div>
-      <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-        {tool.name}
-      </h2>
     </Card>
   )
 }
@@ -178,8 +180,9 @@ export function TechnologyStack() {
   const active = categories.find((c) => c.name === activeCategory)
 
   return (
-    <section className="mt-24 md:mt-28">
+    <section className="py-12">
       <div className="mx-auto max-w-4xl text-center">
+        <h2 className="text-base/7 font-semibold text-zinc-600 dark:text-zinc-400">TECHNOLOGY STACK</h2>
         <h2 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
           Full-stack web & product expertise
         </h2>
@@ -191,7 +194,7 @@ export function TechnologyStack() {
       </div>
 
       {/* Filter tabs */}
-      <div className="mt-12 flex flex-wrap justify-center gap-2">
+      <div className="mt-10 flex flex-wrap justify-center gap-2">
         {categories.map((category) => {
           const isActive = category.name === activeCategory
           return (
@@ -213,7 +216,7 @@ export function TechnologyStack() {
       {/* Tools grid */}
       <ul
         role="list"
-        className="mx-auto mt-16 grid max-w-5xl grid-cols-1 justify-items-center gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-4"
+        className="mx-auto mt-12 grid max-w-5xl grid-cols-3 justify-items-center gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-16 lg:grid-cols-4"
       >
         {active?.tools.map((tool) => (
           <ToolCard key={tool.name} tool={tool} />

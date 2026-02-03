@@ -1,4 +1,4 @@
-import { Container } from '@/components/Container'
+import { Container, ContainerOuter } from '@/components/Container'
 import { Hero } from '@/components/Hero'
 import { Photos } from '@/components/Photos'
 import { Articles } from '@/components/Articles'
@@ -19,9 +19,15 @@ export default async function Home() {
       <NewHero />
       <LogoClouds />
       <SelectedWorks />
-      <Container className="mt-9">
-        <TechnologyStack />
-      </Container>
+      <div className="mt-9">
+        <ContainerOuter>
+          <div className="mx-2 overflow-hidden rounded-xl bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 sm:mx-0">
+            <div className="relative px-4 sm:px-8 lg:pl-8 lg:pr-0">
+              <TechnologyStack />
+            </div>
+          </div>
+        </ContainerOuter>
+      </div>
        <Container className="mt-9">
         <Photos />
       </Container>

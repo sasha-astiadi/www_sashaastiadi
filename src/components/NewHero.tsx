@@ -7,10 +7,10 @@ export function NewHero() {
   return (
     <div className="relative">
       <ContainerOuter>
-        <div className="overflow-hidden rounded-xl ring-1 ring-zinc-100 dark:ring-zinc-300/20">
+        <div className="mx-2 overflow-hidden rounded-xl bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 sm:mx-0">
           <div className="relative px-4 sm:px-8 lg:pl-8 lg:pr-0">
             <div className="lg:grid lg:grid-cols-12 lg:gap-x-0">
-              <div className="py-12 lg:col-span-6 lg:flex lg:aspect-square lg:flex-col lg:justify-center lg:py-0">
+              <div className="py-8 lg:col-span-6 lg:flex lg:aspect-square lg:flex-col lg:justify-center lg:py-0">
                 <div className="mx-auto max-w-lg lg:mx-0">
                   <div className="hidden sm:mt-32 sm:flex lg:mt-0">
                     <div className="relative rounded-full px-3 py-1 text-sm/6 text-zinc-600 ring-1 ring-zinc-900/10 hover:ring-zinc-900/20 dark:text-zinc-400 dark:ring-white/10 dark:hover:ring-white/20">
@@ -21,10 +21,10 @@ export function NewHero() {
                       </a>
                     </div>
                   </div>
-                  <h1 className="mt-6 text-4xl font-semibold tracking-tight text-pretty text-zinc-900 sm:mt-10 sm:text-5xl dark:text-zinc-100">
+                  <h1 className="text-4xl font-semibold tracking-tight text-pretty text-zinc-900 sm:mt-10 mt-4 sm:text-5xl dark:text-zinc-100">
                     Design and build high-performing websites that scale.
                   </h1>
-                  <p className="mt-6 text-lg font-medium text-pretty text-zinc-600 sm:text-lg/8 dark:text-zinc-400">
+                  <p className="mt-6 text-lg font-light text-pretty text-zinc-600 sm:text-lg/8 dark:text-zinc-400">
                     As a consultant specializing in web development projects, I help teams
               plan, orchestrate, and execute clear, scalable web applications; drawing on over five
               years of experience across product planning, UX, engineering, and delivery.
@@ -43,7 +43,7 @@ export function NewHero() {
                 </div>
               </div>
 
-              <div className="relative mt-16 lg:col-span-6 lg:mt-0">
+              <div className="relative mt-8 lg:col-span-6 lg:mt-0 lg:pb-0 pb-12">
                 <Image
                   alt=""
                   src={heroImage}

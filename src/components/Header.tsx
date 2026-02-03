@@ -322,7 +322,7 @@ export function Header() {
           <>
             <div
               ref={avatarRef}
-              className="order-last mt-[calc(--spacing(20)-(--spacing(3)))]"
+              className="order-last mt-[calc(--spacing(10)-(--spacing(3)))]"
             />
           </>
         )}

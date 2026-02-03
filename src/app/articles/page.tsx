@@ -15,7 +15,7 @@ export default async function ArticlesIndex() {
 
   return (
     <SimpleLayout
-      title="Writing on software design, company building, and the aerospace industry."
+      title="Writing on software design, web development, and digital product world."
       intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
     >
       <ArticleList articles={articles} />

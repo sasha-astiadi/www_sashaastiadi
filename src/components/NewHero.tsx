@@ -22,7 +22,7 @@ export function NewHero() {
                     </div>
                   </div>
                   <h1 className="text-4xl font-semibold tracking-tight text-pretty text-zinc-900 sm:mt-10 mt-4 sm:text-5xl dark:text-zinc-100">
-                    Design and build high-performing websites that scale.
+                    Design & build high-performing websites that scale.
                   </h1>
                   <p className="mt-6 text-lg font-light text-pretty text-zinc-600 sm:text-lg/8 dark:text-zinc-400">
                     As a consultant specializing in web development projects, I help teams

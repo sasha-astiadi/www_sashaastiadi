@@ -30,11 +30,11 @@ const clients = [
 
 export default function LogoClouds() {
   return (
-    <div className="sm:px-8 mt-16">
+    <div className="sm:px-8 py-12 lg:py-16">
       <div className="mx-auto w-full max-w-7xl lg:px-8">
         <div className="relative px-4 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-2xl lg:max-w-5xl overflow-hidden">
-            <div className="flex animate-marquee items-center gap-x-14 py-8">
+          <div className="mx-auto max-w-2xl lg:max-w-6xl overflow-hidden">
+            <div className="flex animate-marquee items-center gap-x-14 py-4">
               {[...clients, ...clients].map((client, index) => (
                 <Image
                   key={`${client.name}-${index}`}

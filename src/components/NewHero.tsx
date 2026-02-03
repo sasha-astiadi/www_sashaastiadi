@@ -26,7 +26,7 @@ export function NewHero() {
                     <div className="relative rounded-full px-3 py-1 text-sm/6 text-zinc-600 ring-1 ring-zinc-900/10 hover:ring-zinc-900/20 dark:text-zinc-400 dark:ring-white/10 dark:hover:ring-white/20">
                       Ready to step up your web performance?{" "}
                       <a
-                        href="#"
+                        href="https://calendly.com/sashaastiadi/30min"
                         className={`${libreBodoniItalic} whitespace-nowrap text-zinc-900 dark:text-zinc-100`}
                       >
                         <span aria-hidden="true" className="absolute inset-0" />

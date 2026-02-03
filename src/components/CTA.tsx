@@ -23,7 +23,7 @@ export function CTA() {
             Book a free 30-minute consultation to explore your project.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button href="#" variant="secondary">
+            <Button href="https://calendly.com/sashaastiadi/30min" variant="secondary">
               Book a free call
             </Button>
           </div>

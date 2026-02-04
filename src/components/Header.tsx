@@ -107,15 +107,16 @@ function MobileNavigation(
   props: React.ComponentPropsWithoutRef<typeof Popover>
 ) {
   let pathname = usePathname()
-  let pageTitle =
-    {
-      '/': 'Home',
-      '/about': 'About',
-      '/articles': 'Articles',
-      '/projects': 'Projects',
-      '/speaking': 'Speaking',
-      '/uses': 'Uses',
-    }[pathname] ?? 'Menu'
+  let pageTitles: Record<string, string> = {
+    '/': 'Home',
+    '/about': 'About',
+    '/articles': 'Articles',
+    '/projects': 'Projects',
+    '/speaking': 'Speaking',
+    '/uses': 'Uses',
+  }
+
+  let pageTitle = (pathname ? pageTitles[pathname] : undefined) ?? 'Menu'
 
   return (
     <Popover {...props}>

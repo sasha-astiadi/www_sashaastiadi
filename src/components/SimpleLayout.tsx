@@ -26,12 +26,14 @@ export function SimpleLayout({
   children,
   reveal,
   cta,
+  ctaWidth,
 }: {
   title: string
   intro: string
   children?: React.ReactNode
   reveal?: boolean
   cta?: boolean
+  ctaWidth?: 'content' | 'footer'
 }) {
   let idPrefix = title
     .toLowerCase()
@@ -48,34 +50,50 @@ export function SimpleLayout({
   )
 
   return (
-    <Container className="mt-16 sm:mt-32">
-      {reveal ? (
-        <RevealGroup>
-          <RevealSection id={`${idPrefix}-header`}>{header}</RevealSection>
-          {children && (
-            <RevealSection id={`${idPrefix}-content`}>
-              <div className="mt-16 sm:mt-20">{children}</div>
-            </RevealSection>
-          )}
-          {cta !== false && (
-            <RevealSection id={`${idPrefix}-cta`}>
+    <>
+      <Container className="mt-16 sm:mt-32">
+        {reveal ? (
+          <RevealGroup>
+            <RevealSection id={`${idPrefix}-header`}>{header}</RevealSection>
+            {children && (
+              <RevealSection id={`${idPrefix}-content`}>
+                <div className="mt-16 sm:mt-20">{children}</div>
+              </RevealSection>
+            )}
+            {cta !== false && ctaWidth !== 'footer' && (
+              <RevealSection id={`${idPrefix}-cta`}>
+                <div className="mt-12">
+                  <CTA />
+                </div>
+              </RevealSection>
+            )}
+          </RevealGroup>
+        ) : (
+          <>
+            {header}
+            {children && <div className="mt-16 sm:mt-20">{children}</div>}
+            {cta !== false && ctaWidth !== 'footer' && (
               <div className="mt-12">
                 <CTA />
               </div>
-            </RevealSection>
+            )}
+          </>
+        )}
+      </Container>
+
+      {cta !== false && ctaWidth === 'footer' && (
+        <div className="mt-12">
+          {reveal ? (
+            <RevealGroup>
+              <RevealSection id={`${idPrefix}-cta`}>
+                <CTA />
+              </RevealSection>
+            </RevealGroup>
+          ) : (
+            <CTA />
           )}
-        </RevealGroup>
-      ) : (
-        <>
-          {header}
-          {children && <div className="mt-16 sm:mt-20">{children}</div>}
-          {cta !== false && (
-            <div className="mt-12">
-              <CTA />
-            </div>
-          )}
-        </>
+        </div>
       )}
-    </Container>
+    </>
   )
 }

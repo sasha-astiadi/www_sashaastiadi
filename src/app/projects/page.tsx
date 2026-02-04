@@ -15,6 +15,7 @@ export default function Projects() {
       intro="A collection of projects spanning product design, web engineering, and decentralized systems.
 Each one reflects an interest in clarity, structure, and building tools that empower people; whether through storytelling, infrastructure, or thoughtful interfaces."
       reveal
+      ctaWidth="footer"
     >
       <ProjectList />
     </SimpleLayout>

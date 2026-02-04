@@ -1,0 +1,179 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import thumbnailImage from '@/images/photos/project_maison.png'
+
+export const article = {
+  author: 'Sasha Astiadi',
+  date: '2026-02-02',
+  title: 'Web Development Frameworks in 2026: What Matters, What Doesn’t',
+  description:
+    'In 2026, choosing a web development framework isn’t about popularity — it’s about performance, scalability, maintainability, and the problems you need to solve. This article breaks down the leading frameworks and when to use them.',
+  image: thumbnailImage,
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default function Article(props) {
+  return <ArticleLayout article={article} {...props} />
+}
+
+Web development in 2026 looks very different from the landscape even five years ago.
+
+Meta-frameworks, improved interoperability between frontend and backend, AI-assisted tooling and a renewed focus on performance have shifted how teams build modern web applications. Instead of chasing trends, developers now make deliberate framework choices to balance **developer experience, performance, scalability, and long-term maintainability**. :contentReference[oaicite:1]{index=1}
+
+Below, we break down the frameworks that matter in 2026 — what they’re good at, where they fall short, and which kinds of projects they suit best.
+
+---
+
+## What To Look For In a Framework (2026)
+
+When selecting a framework today, consider:
+
+- **Performance & SEO** — How well does it handle server rendering and time-to-content?
+- **Scalability** — Is the architecture suitable for growing applications?
+- **Ecosystem & Tooling** — Does the framework play nice with modern tooling?
+- **Learning Curve** — How steep is the learning curve for your team?
+- **Community & Longevity** — Is there community support for future-proofing? :contentReference[oaicite:2]{index=2}
+
+A framework choice should not be based on hype alone — it should support your product’s goals.
+
+---
+
+## Frontend & Full-Stack Frameworks
+
+### **React (Library + Ecosystem)**
+
+**Pros:**
+- Extremely large ecosystem and community support  
+- Flexible and unopinionated, integrates with many tools  
+- Great for complex, interactive UIs  
+- Lots of jobs/opportunities and tooling
+
+**Cons:**
+- Not a full framework on its own — needs stack decisions around routing, data, build tools  
+- Bundle sizes can grow if unmanaged
+
+React remains one of the most widely used options globally, still powering millions of consumer and enterprise apps. :contentReference[oaicite:3]{index=3}
+
+---
+
+### **Next.js (React Meta-Framework)**
+
+**Pros:**
+- Full feature set out of the box: SSR/SSG, edge functions, API routes  
+- Optimized for performance and SEO  
+- Great DX with automatic conventions
+
+**Cons:**
+- Opinionated — requires learning its conventions  
+- Some advanced features (like streaming) add complexity
+
+Next.js has become a leading choice for modern web apps thanks to integrated rendering strategies, API functions, and edge deployment patterns. :contentReference[oaicite:4]{index=4}
+
+---
+
+### **Vue.js**
+
+**Pros:**
+- Intuitive, gentle learning curve  
+- Great for rapid UI development  
+- Very active ecosystem and tools
+
+**Cons:**
+- Less dominant in enterprise markets compared to React  
+- Some ecosystem fragmentation around state/data libraries
+
+Vue remains a solid all-around choice for SPAs or smaller projects.
+
+---
+
+### **Svelte & SvelteKit**
+
+**Pros:**
+- Compiles away the framework — smaller bundles, faster runtime  
+- Simple syntax with very good performance  
+- More straightforward reactivity model
+
+**Cons:**
+- Smaller ecosystem & fewer enterprise jobs compared with React/Vue  
+- Some libraries/tools may lack Svelte-specific support
+
+SvelteKit, the Svelte meta-framework, is gaining traction for performance-driven projects. :contentReference[oaicite:5]{index=5}
+
+---
+
+## Backend & Full-Stack Frameworks
+
+### **Django (Python)**
+
+**Pros:**
+- Batteries-included backend framework  
+- Great for rapid development and strong admin tools  
+- Good security defaults
+
+**Cons:**
+- Less ideal for real-time APIs compared to newer async frameworks  
+- Larger projects can become monolithic
+
+Well suited for traditional, database-driven applications.
+
+---
+
+### **FastAPI (Python)**
+
+**Pros:**
+- Asynchronous by default — excellent speed  
+- Automatic API docs (OpenAPI/Swagger)  
+- Modern Python syntax with type hints
+
+**Cons:**
+- Less opinionated on structure — can vary between teams
+
+FastAPI is a rising star for building scalable backend APIs, especially when performance matters.
+
+---
+
+### **Laravel (PHP)**
+
+**Pros:**
+- Mature ecosystem with ORM, queues, and task scheduling  
+- Great for monolithic apps and content-driven sites  
+- Blade templating is easy to adopt
+
+**Cons:**
+- PHP’s popularity in newer greenfield apps is lower compared with JS-based stacks
+
+Still a strong contender in teams with PHP expertise.
+
+---
+
+## 📊 Choosing the Right Tool — A Practical Guide
+
+Here’s a simple decision tree:
+
+- **Content/marketing site or documentation** → Astro (fast static + islands) or Next.js  
+- **Modern dynamic app with SEO focus** → Next.js or Remix  
+- **High-performance UI with minimal overhead** → Svelte/SvelteKit  
+- **API-first backend** → FastAPI or Django  
+- **Full-stack product with tight backend logic** → Laravel or Django  
+
+The “best” framework is always the one that fits your **team skills, project goals, performance needs, and long-term maintenance plan**, not the most popular one. :contentReference[oaicite:6]{index=6}
+
+---
+
+## 🧩 Closing Thoughts
+
+In 2026, web development is not defined by **framework wars** but by **deliberate choices**:
+
+- Meta-frameworks handle the mundane so developers focus on product logic.  
+- Performance and SEO are built into the stack, not bolted on.  
+- Backend and frontend are closer than ever — with shared patterns like server actions and typed APIs. :contentReference[oaicite:7]{index=7}
+
+Most importantly, the right stack depends on the product you’re building — not what’s trending.
+
+---
+
+*This article is informed by ecosystem trends and up-to-date 2026 tooling intelligence. It reflects ongoing changes in the web development landscape.*
+::contentReference[oaicite:8]{index=8}

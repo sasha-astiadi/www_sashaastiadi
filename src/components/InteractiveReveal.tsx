@@ -24,12 +24,12 @@ type InteractiveRevealContextValue = {
   getFocus: (id: string) => number
 }
 
-let InteractiveRevealContext = createContext<InteractiveRevealContextValue | null>(
+const InteractiveRevealContext = createContext<InteractiveRevealContextValue | null>(
   null,
 )
 
 function useInteractiveRevealContext() {
-  let ctx = useContext(InteractiveRevealContext)
+  const ctx = useContext(InteractiveRevealContext)
   if (!ctx) {
     throw new Error('RevealSection must be used within <RevealGroup>.')
   }
@@ -37,23 +37,23 @@ function useInteractiveRevealContext() {
 }
 
 export function useRevealIsActive(id: string) {
-  let { activeId } = useInteractiveRevealContext()
+  const { activeId } = useInteractiveRevealContext()
   return activeId === id
 }
 
 export function RevealGroup({ children }: { children: React.ReactNode }) {
-  let sectionsRef = useRef<Map<string, SectionRecord>>(new Map())
-  let rafRef = useRef<number | null>(null)
-  let lastPointerY = useRef<number | null>(null)
-  let lastPointerMoveAt = useRef<number | null>(null)
+  const sectionsRef = useRef<Map<string, SectionRecord>>(new Map())
+  const rafRef = useRef<number | null>(null)
+  const lastPointerY = useRef<number | null>(null)
+  const lastPointerMoveAt = useRef<number | null>(null)
 
-  let [activeId, setActiveId] = useState<string | null>(null)
-  let [focusById, setFocusById] = useState<Record<string, number>>({})
+  const [activeId, setActiveId] = useState<string | null>(null)
+  const [focusById, setFocusById] = useState<Record<string, number>>({})
 
-  let computeActive = useCallback(() => {
+  const computeActive = useCallback(() => {
     rafRef.current = null
 
-    let sections = Array.from(sectionsRef.current.values())
+    const sections = Array.from(sectionsRef.current.values())
       .filter((s) => s.el.isConnected)
       .filter((s) => s.revealed)
 
@@ -62,27 +62,27 @@ export function RevealGroup({ children }: { children: React.ReactNode }) {
       return
     }
 
-    let pointerY = lastPointerY.current
-    let now = Date.now()
-    let pointerRecentlyMoved =
+    const pointerY = lastPointerY.current
+    const now = Date.now()
+    const pointerRecentlyMoved =
       lastPointerMoveAt.current != null && now - lastPointerMoveAt.current < 1500
 
     // Fallback for touch/no-mouse: use viewport center.
-    let targetY = pointerY ?? window.innerHeight / 2
+    const targetY = pointerY ?? window.innerHeight / 2
 
     let best: { id: string; dist: number } | null = null
 
-    let nextFocus: Record<string, number> = {}
-    let vh = Math.max(1, window.innerHeight)
+    const nextFocus: Record<string, number> = {}
+    const vh = Math.max(1, window.innerHeight)
 
-    for (let s of sections) {
-      let rect = s.el.getBoundingClientRect()
-      let centerY = rect.top + rect.height / 2
-      let dist = Math.abs(centerY - targetY)
+    for (const s of sections) {
+      const rect = s.el.getBoundingClientRect()
+      const centerY = rect.top + rect.height / 2
+      const dist = Math.abs(centerY - targetY)
 
       // User-friendly fade: only when pointer is actively moving.
       // Focus is 1 when close, tapering to 0 as distance approaches ~1 viewport.
-      let focus = pointerRecentlyMoved ? 1 - Math.min(1, dist / (vh * 0.9)) : 1
+      const focus = pointerRecentlyMoved ? 1 - Math.min(1, dist / (vh * 0.9)) : 1
       nextFocus[s.id] = focus
 
       if (!best || dist < best.dist) {
@@ -94,14 +94,14 @@ export function RevealGroup({ children }: { children: React.ReactNode }) {
     setFocusById(nextFocus)
   }, [])
 
-  let scheduleCompute = useCallback(() => {
+  const scheduleCompute = useCallback(() => {
     if (rafRef.current != null) return
     rafRef.current = window.requestAnimationFrame(computeActive)
   }, [computeActive])
 
-  let register = useCallback(
+  const register = useCallback(
     (id: string, el: HTMLElement) => {
-      let existing = sectionsRef.current.get(id)
+      const existing = sectionsRef.current.get(id)
       sectionsRef.current.set(id, {
         id,
         el,
@@ -112,7 +112,7 @@ export function RevealGroup({ children }: { children: React.ReactNode }) {
     [scheduleCompute],
   )
 
-  let unregister = useCallback(
+  const unregister = useCallback(
     (id: string) => {
       sectionsRef.current.delete(id)
       scheduleCompute()
@@ -120,9 +120,9 @@ export function RevealGroup({ children }: { children: React.ReactNode }) {
     [scheduleCompute],
   )
 
-  let setRevealed = useCallback(
+  const setRevealed = useCallback(
     (id: string, revealed: boolean) => {
-      let rec = sectionsRef.current.get(id)
+      const rec = sectionsRef.current.get(id)
       if (!rec) return
       if (rec.revealed === revealed) return
       rec.revealed = revealed
@@ -133,14 +133,14 @@ export function RevealGroup({ children }: { children: React.ReactNode }) {
   )
 
   useEffect(() => {
-    let prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)')
     if (prefersReduced.matches) {
       // Still compute active section, but don't track pointer frequently.
       scheduleCompute()
       return
     }
 
-    let canHover = window.matchMedia('(hover: hover) and (pointer: fine)')
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)')
 
     function onPointerMove(e: PointerEvent) {
       if (!canHover.matches) return
@@ -169,7 +169,7 @@ export function RevealGroup({ children }: { children: React.ReactNode }) {
     }
   }, [scheduleCompute])
 
-  let value = useMemo(
+  const value = useMemo(
     () => ({
       register,
       unregister,
@@ -196,14 +196,14 @@ export function RevealSection({
   children: React.ReactNode
   className?: string
 }) {
-  let { register, unregister, setRevealed, activeId, getFocus } =
+  const { register, unregister, setRevealed, activeId, getFocus } =
     useInteractiveRevealContext()
 
-  let ref = useRef<HTMLDivElement | null>(null)
-  let [revealed, setRevealedLocal] = useState(false)
+  const ref = useRef<HTMLDivElement | null>(null)
+  const [revealed, setRevealedLocal] = useState(false)
 
   useEffect(() => {
-    let el = ref.current
+    const el = ref.current
     if (!el) return
 
     register(id, el)
@@ -214,19 +214,19 @@ export function RevealSection({
   }, [id, register, unregister])
 
   useEffect(() => {
-    let el = ref.current
+    const el = ref.current
     if (!el) return
 
-    let prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)')
     if (prefersReduced.matches) {
       setRevealedLocal(true)
       setRevealed(id, true)
       return
     }
 
-    let observer = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
-        for (let entry of entries) {
+        for (const entry of entries) {
           if (entry.isIntersecting) {
             setRevealedLocal(true)
             setRevealed(id, true)
@@ -243,19 +243,19 @@ export function RevealSection({
     return () => observer.disconnect()
   }, [id, setRevealed])
 
-  let isActive = activeId === id
-  let focus = getFocus(id)
+  const isActive = activeId === id
+  const focus = getFocus(id)
 
-  let base =
+  const base =
     'transition duration-700 ease-out will-change-transform motion-reduce:transition-none'
-  let revealState = revealed
+  const revealState = revealed
     ? 'translate-y-0'
     : 'opacity-0 translate-y-6'
 
   // Fade/scale are applied via inline styles so we can smoothly
   // adjust them per-section based on pointer distance.
-  let opacity = revealed ? 0.55 + 0.45 * focus : undefined
-  let scale = revealed ? (isActive ? 1.01 : 1 + 0.006 * focus) : undefined
+  const opacity = revealed ? 0.55 + 0.45 * focus : undefined
+  const scale = revealed ? (isActive ? 1.01 : 1 + 0.006 * focus) : undefined
 
   return (
     <div

@@ -35,12 +35,12 @@ export function SimpleLayout({
   cta?: boolean
   ctaWidth?: 'content' | 'footer'
 }) {
-  let idPrefix = title
+  const idPrefix = title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '')
 
-  let header = (
+  const header = (
     <header className="max-w-2xl">
       <h1 className="text-4xl font-normal tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
         {renderStyledTitle(title)}

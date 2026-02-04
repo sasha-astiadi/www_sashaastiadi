@@ -53,13 +53,13 @@ interface Role {
 }
 
 function Role({ role, bgColor }: { role: Role; bgColor: string }) {
-  let startLabel =
+  const startLabel =
     typeof role.start === 'string' ? role.start : role.start.label
-  let startDate =
+  const startDate =
     typeof role.start === 'string' ? role.start : role.start.dateTime
 
-  let endLabel = typeof role.end === 'string' ? role.end : role.end.label
-  let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
+  const endLabel = typeof role.end === 'string' ? role.end : role.end.label
+  const endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
 
   return (
     <li className="flex gap-4">
@@ -93,7 +93,7 @@ function Role({ role, bgColor }: { role: Role; bgColor: string }) {
 }
 
 export function Resume() {
-  let resume: Array<Role & { bgColor: string }> = [
+  const resume: Array<Role & { bgColor: string }> = [
     {
       company: 'OurWorld Holding',
       title: 'Web Architect',

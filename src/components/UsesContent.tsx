@@ -39,7 +39,7 @@ export function UsesList() {
       {/* WORKSTATION */}
       <ToolsSection title="Workstation">
         <Tool title='16" MacBook Pro, M1 Max, 64GB RAM (2021)'>
-          I upgraded from an Intel-based 16" MacBook Pro and the difference was
+          I upgraded from an Intel-based 16&quot; MacBook Pro and the difference was
           immediate and dramatic. Silent under load, incredibly fast, and
           reliable even during heavy builds, simulations, and parallel dev
           workflows.

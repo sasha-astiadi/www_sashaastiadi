@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useMemo, useState } from 'react'
+import { useState } from 'react'
 import { Card } from '@/components/Card'
 import { Eyebrow, libreBodoniItalic } from '@/components/ui/Texts'
 import { FadeWord } from '@/components/ui/fade-word'
@@ -180,7 +180,7 @@ function ToolCard({ tool }: { tool: Tool }) {
 export function TechnologyStack() {
   const [activeCategory, setActiveCategory] = useState(categories[0].name)
 
-  let isActive = useRevealIsActive('tech')
+  const isActive = useRevealIsActive('tech')
 
   const active = categories.find((c) => c.name === activeCategory)
 

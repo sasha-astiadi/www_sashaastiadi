@@ -1,20 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 
-import image1 from '@/images/photos/project_ow.png'
-import image2 from '@/images/photos/project_here.png'
-import image3 from '@/images/photos/project_indaba.png'
-import image4 from '@/images/photos/project_threefold.png'
-import image5 from '@/images/photos/project_mycelium.png'
-import image6 from '@/images/photos/project_maison.png'
 import owAfterImage from '@/images/projects/ourworld/ow_after.png'
 
-const images = [image1, image2, image3, image4, image5, image6]
-
 export function HighlightedCaseArchive() {
-  let rotations = ['rotate-1', '-rotate-1', 'rotate-1', '-rotate-1', 'rotate-1', '-rotate-1']
-
   return (
     <div className="mt-12 lg:mt-24">
       <div className="mx-2 overflow-hidden rounded-xl bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20 sm:mx-0">

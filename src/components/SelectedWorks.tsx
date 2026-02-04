@@ -71,7 +71,7 @@ const items = [
 ]
 
 export const SelectedWorks = () => {
-  let isActive = useRevealIsActive('works')
+  const isActive = useRevealIsActive('works')
 
   return (
     <div className="lg:pb-0 pb-12">

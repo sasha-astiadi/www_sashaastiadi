@@ -1,4 +1,5 @@
-import { Section } from '@/components/Section'
+import type { StaticImageData } from 'next/image'
+
 import dunia1Image from '@/images/press/dunia/dunia1.jpeg'
 import iglive1Image from '@/images/press/iglive/iglive1.png'
 import code1Image from '@/images/press/code/code1.png'
@@ -7,22 +8,10 @@ import podcast1Image from '@/images/press/podcast/podcast1.jpg'
 
 
 
-function PressSection({
-  children,
-  ...props
-}: React.ComponentPropsWithoutRef<typeof Section>) {
-  return (
-    <Section {...props}>
-      <div className="grid grid-cols-1 gap-8 gap-x-12 md:grid-cols-2 md:gap-y-12">{children}</div>
-    </Section>
-  )
-}
-
 function Appearance({
   title,
   description,
   event,
-  cta,
   href,
   image,
   location,
@@ -31,28 +20,21 @@ function Appearance({
   title: string
   description: string
   event: string
-  cta: string
   href: string
-  image: string | any
+  image: string | StaticImageData
   location: string
   category: string
 }) {
+  const imageSrc = typeof image === 'string' ? image : image.src
+
   return (
     <div className="relative aspect-square w-full overflow-hidden rounded-md group">
       {/* Background image */}
-      {typeof image === 'string' ? (
-        <img
-          src={image}
-          alt={`Speaking at ${event}`}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-      ) : (
-        <img
-          src={image.src || image}
-          alt={`Speaking at ${event}`}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-      )}
+      <img
+        src={imageSrc}
+        alt={`Speaking at ${event}`}
+        className="absolute inset-0 h-full w-full object-cover"
+      />
 
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black/60 transition-opacity group-hover:bg-black/50" />
@@ -108,7 +90,6 @@ export function PressList() {
           location="Jakarta, Indonesia"
           category="Conference"
           image={dunia1Image}
-          cta="Watch video"
         />
         <Appearance
   href="https://www.instagram.com/p/CMHocUCs-6C/"
@@ -118,7 +99,6 @@ export function PressList() {
   location="Online"
   category="Live Talk"
   image={iglive1Image}
-  cta="Watch live recording"
 />
 <Appearance
   href="https://www.youtube.com/watch?v=FefQ-fzO2Jw"
@@ -128,7 +108,6 @@ export function PressList() {
   location="Berlin, Germany"
   category="Video Feature"
   image={code1Image}
-  cta="Watch video"
 />
 <Appearance
   href="https://open.spotify.com/episode/7nz4w2FKasNwBizjRwVDrz?si=S7a9-h7pQOeaLH0TPBn9WA"
@@ -138,7 +117,6 @@ export function PressList() {
   location="Berlin, Germany"
   category="Podcast"
   image={podcast1Image}
-  cta="Listen on Spotify"
 />
 
 

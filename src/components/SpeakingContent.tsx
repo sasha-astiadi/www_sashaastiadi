@@ -1,4 +1,3 @@
-import { Card } from '@/components/Card'
 import { Section } from '@/components/Section'
 import dunia1Image from '@/images/press/dunia/dunia1.jpeg'
 import iglive1Image from '@/images/press/iglive/iglive1.png'
@@ -8,7 +7,7 @@ import podcast1Image from '@/images/press/podcast/podcast1.jpg'
 
 
 
-function SpeakingSection({
+function PressSection({
   children,
   ...props
 }: React.ComponentPropsWithoutRef<typeof Section>) {
@@ -97,7 +96,7 @@ function Appearance({
   )
 }
 
-export function SpeakingList() {
+export function PressList() {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="grid grid-cols-1 gap-8 gap-x-24 md:grid-cols-2 md:gap-y-24">

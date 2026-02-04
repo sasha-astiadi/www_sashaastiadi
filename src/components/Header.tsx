@@ -93,7 +93,7 @@ function MobileNavItem({
         className={clsx(
           'block py-2',
           isActive
-            ? 'text-teal-500 dark:text-teal-400'
+            ? 'font-semibold text-teal-500 dark:text-teal-400'
             : 'hover:text-teal-500 dark:hover:text-teal-400',
         )}
       >
@@ -122,9 +122,11 @@ function MobileNavigation(
       {({ open }) => (
         <>
           <PopoverButton
-            className={`group flex h-14 items-center rounded-xl px-3 py-0 text-sm font-normal text-zinc-800 shadow-lg shadow-zinc-800/5 backdrop-blur-sm dark:text-zinc-200 md:px-4 ${newHeroGradientLight} ${newHeroGradientDark}`}
+            className={`group flex h-14 items-center rounded-xl px-4 py-0 text-sm font-normal text-zinc-800 shadow-lg shadow-zinc-800/5 backdrop-blur-sm dark:text-zinc-200 md:px-4 ${newHeroGradientLight} ${newHeroGradientDark}`}
           >
-            {pageTitle}
+            <span className="text-base font-semibold text-teal-500 dark:text-teal-400">
+              {pageTitle}
+            </span>
             <ChevronDownIcon
               className={clsx(
                 'ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400',
@@ -139,18 +141,15 @@ function MobileNavigation(
           <PopoverPanel
             focus
             transition
-            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 duration-150 data-closed:scale-95 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in dark:bg-zinc-900 dark:ring-zinc-800"
+            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 duration-150 data-closed:scale-95 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in dark:bg-zinc-900 dark:ring-zinc-800"
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <PopoverButton aria-label="Close menu" className="-m-1 p-1">
                 <CloseIcon className="h-9 w-9 text-zinc-500 dark:text-zinc-400" />
               </PopoverButton>
-              <h2 className="text-sm font-normal text-zinc-600 dark:text-zinc-400">
-                Navigation
-              </h2>
             </div>
             <nav className="mt-6">
-              <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+              <ul className="-my-2 divide-y divide-zinc-100 text-lg text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <MobileNavItem href="/">Home</MobileNavItem>
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/articles">Articles</MobileNavItem>

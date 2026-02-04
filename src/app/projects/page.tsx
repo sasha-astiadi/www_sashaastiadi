@@ -5,7 +5,7 @@ import { ProjectList } from '@/components/ProjectList'
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: "Things I've made trying to put my dent in the universe.",
+  description: "Websites I’ve built while trying to understand how design, technology, and people fit together.",
 }
 
 export default function Projects() {

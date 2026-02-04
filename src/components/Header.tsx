@@ -13,6 +13,7 @@ import {
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
+import { newHeroGradientDark, newHeroGradientLight } from '@/components/ui/Texts'
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -82,9 +83,20 @@ function MobileNavItem({
   href: string
   children: React.ReactNode
 }) {
+  let isActive = usePathname() === href
+
   return (
     <li>
-      <PopoverButton as={Link} href={href} className="block py-2">
+      <PopoverButton
+        as={Link}
+        href={href}
+        className={clsx(
+          'block py-2',
+          isActive
+            ? 'text-teal-500 dark:text-teal-400'
+            : 'hover:text-teal-500 dark:hover:text-teal-400',
+        )}
+      >
         {children}
       </PopoverButton>
     </li>
@@ -94,40 +106,62 @@ function MobileNavItem({
 function MobileNavigation(
   props: React.ComponentPropsWithoutRef<typeof Popover>
 ) {
+  let pathname = usePathname()
+  let pageTitle =
+    {
+      '/': 'Home',
+      '/about': 'About',
+      '/articles': 'Articles',
+      '/projects': 'Projects',
+      '/speaking': 'Speaking',
+      '/uses': 'Uses',
+    }[pathname] ?? 'Menu'
+
   return (
     <Popover {...props}>
-      <PopoverButton className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-normal text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
-        Menu
-        <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
-      </PopoverButton>
-      <PopoverBackdrop
-        transition
-        className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-xs duration-150 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in dark:bg-black/80"
-      />
-      <PopoverPanel
-        focus
-        transition
-        className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 duration-150 data-closed:scale-95 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in dark:bg-zinc-900 dark:ring-zinc-800"
-      >
-        <div className="flex flex-row-reverse items-center justify-between">
-          <PopoverButton aria-label="Close menu" className="-m-1 p-1">
-            <CloseIcon className="h-9 w-9 text-zinc-500 dark:text-zinc-400" />
+      {({ open }) => (
+        <>
+          <PopoverButton
+            className={`group flex h-14 items-center rounded-xl px-3 py-0 text-sm font-normal text-zinc-800 shadow-lg shadow-zinc-800/5 backdrop-blur-sm dark:text-zinc-200 md:px-4 ${newHeroGradientLight} ${newHeroGradientDark}`}
+          >
+            {pageTitle}
+            <ChevronDownIcon
+              className={clsx(
+                'ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400',
+                open && 'rotate-180',
+              )}
+            />
           </PopoverButton>
-          <h2 className="text-sm font-normal text-zinc-600 dark:text-zinc-400">
-            Navigation
-          </h2>
-        </div>
-        <nav className="mt-6">
-          <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <MobileNavItem href="/">Home</MobileNavItem>
-            <MobileNavItem href="/about">About</MobileNavItem>
-            <MobileNavItem href="/articles">Articles</MobileNavItem>
-            <MobileNavItem href="/projects">Projects</MobileNavItem>
-            <MobileNavItem href="/speaking">Speaking</MobileNavItem>
-            <MobileNavItem href="/uses">Uses</MobileNavItem>
-          </ul>
-        </nav>
-      </PopoverPanel>
+          <PopoverBackdrop
+            transition
+            className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-xs duration-150 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in dark:bg-black/80"
+          />
+          <PopoverPanel
+            focus
+            transition
+            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 duration-150 data-closed:scale-95 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in dark:bg-zinc-900 dark:ring-zinc-800"
+          >
+            <div className="flex flex-row-reverse items-center justify-between">
+              <PopoverButton aria-label="Close menu" className="-m-1 p-1">
+                <CloseIcon className="h-9 w-9 text-zinc-500 dark:text-zinc-400" />
+              </PopoverButton>
+              <h2 className="text-sm font-normal text-zinc-600 dark:text-zinc-400">
+                Navigation
+              </h2>
+            </div>
+            <nav className="mt-6">
+              <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+                <MobileNavItem href="/">Home</MobileNavItem>
+                <MobileNavItem href="/about">About</MobileNavItem>
+                <MobileNavItem href="/articles">Articles</MobileNavItem>
+                <MobileNavItem href="/projects">Projects</MobileNavItem>
+                <MobileNavItem href="/speaking">Speaking</MobileNavItem>
+                <MobileNavItem href="/uses">Uses</MobileNavItem>
+              </ul>
+            </nav>
+          </PopoverPanel>
+        </>
+      )}
     </Popover>
   )
 }
@@ -164,7 +198,9 @@ function NavItem({
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
-      <ul className="flex items-center rounded-xl bg-white/90 px-3 text-sm font-normal text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 md:h-14 md:px-4 md:text-base">
+      <ul
+        className={`flex items-center rounded-xl px-3 text-sm font-normal text-zinc-800 shadow-lg shadow-zinc-800/5 backdrop-blur-sm dark:text-zinc-200 md:h-14 md:px-4 md:text-base ${newHeroGradientLight} ${newHeroGradientDark}`}
+      >
         <NavItem href="/">Home</NavItem>
         <NavItem href="/about">About</NavItem>
         <NavItem href="/articles">Articles</NavItem>
@@ -189,7 +225,7 @@ function ThemeToggle() {
     <button
       type="button"
       aria-label={mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'}
-      className="group flex items-center justify-center rounded-xl bg-white/90 px-3 py-2 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 md:h-14 md:px-4 md:py-0"
+      className={`group flex h-14 items-center justify-center rounded-xl px-3 py-0 shadow-lg shadow-zinc-800/5 backdrop-blur-sm transition md:px-4 ${newHeroGradientLight} ${newHeroGradientDark}`}
       onClick={() => setTheme(otherTheme)}
     >
       <SunIcon className="h-9 w-9 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
@@ -209,7 +245,7 @@ function LogoPill() {
     <Link
       href="/"
       aria-label="Home"
-      className="flex items-center justify-center rounded-xl bg-white/90 px-3 py-2 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 md:h-14 md:px-4 md:py-0"
+      className={`flex h-14 items-center justify-center rounded-xl px-3 py-0 shadow-lg shadow-zinc-800/5 backdrop-blur-sm transition md:px-4 ${newHeroGradientLight} ${newHeroGradientDark}`}
     >
       <img
         src="/images/sasha_logo_dark.svg"
@@ -233,7 +269,7 @@ export function Header() {
   let isInitial = useRef(true)
 
   useEffect(() => {
-    let downDelay = avatarRef.current?.offsetTop ?? 0
+    let downDelay = (avatarRef.current?.offsetTop ?? 0) / 2
     let upDelay = 64
 
     function setProperty(property: string, value: string) {
@@ -345,7 +381,7 @@ export function Header() {
           <>
             <div
               ref={avatarRef}
-              className="order-last mt-[calc(--spacing(6)-(--spacing(3)))] sm:mt-[calc(--spacing(10)-(--spacing(3)))]"
+              className="order-last mt-1.5 sm:mt-3.5"
             />
           </>
         )}
@@ -364,15 +400,25 @@ export function Header() {
                 'var(--header-inner-position)' as React.CSSProperties['position'],
             }}
           >
-            <div className="relative grid grid-cols-[auto_auto_auto] items-center justify-center gap-24">
+            <div className="relative flex items-center justify-between md:hidden">
+              <div className="pointer-events-auto">
+                <LogoPill />
+              </div>
+              <div className="flex items-center gap-4">
+                <MobileNavigation className="pointer-events-auto" />
+                <div className="pointer-events-auto">
+                  <ThemeToggle />
+                </div>
+              </div>
+            </div>
+            <div className="relative hidden grid-cols-[auto_auto_auto] items-center justify-center gap-24 md:grid">
               <div className="flex">
-                <div className="pointer-events-auto hidden md:block">
+                <div className="pointer-events-auto">
                   <LogoPill />
                 </div>
               </div>
-              <div className="flex justify-end md:justify-center">
-                <MobileNavigation className="pointer-events-auto md:hidden" />
-                <DesktopNavigation className="pointer-events-auto hidden md:block" />
+              <div className="flex justify-center">
+                <DesktopNavigation className="pointer-events-auto" />
               </div>
               <div className="flex">
                 <div className="pointer-events-auto">

@@ -19,8 +19,8 @@ export default function About() {
   return (
     <ContainerOuter className="mt-12 sm:mt-24 sm:px-6 lg:px-0">
       <div className="relative px-2 sm:px-6 lg:px-0">
-        <div className="mx-auto max-w-6xl">
-          <RevealGroup>
+        <RevealGroup>
+          <div className="mx-auto max-w-6xl">
             <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
               <RevealSection id="about-portrait">
                 <AboutPortrait />
@@ -32,13 +32,13 @@ export default function About() {
                 <AboutSocialLinks />
               </RevealSection>
             </div>
-            <RevealSection id="about-cta">
-              <div className="mt-12">
-                <CTA />
-              </div>
-            </RevealSection>
-          </RevealGroup>
-        </div>
+          </div>
+          <RevealSection id="about-cta">
+            <div className="mt-12">
+              <CTA />
+            </div>
+          </RevealSection>
+        </RevealGroup>
       </div>
     </ContainerOuter>
   )

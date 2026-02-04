@@ -364,8 +364,8 @@ export function Header() {
                 'var(--header-inner-position)' as React.CSSProperties['position'],
             }}
           >
-            <div className="relative grid grid-cols-[1fr_auto_1fr] items-center gap-24">
-              <div className="flex justify-end">
+            <div className="relative grid grid-cols-[auto_auto_auto] items-center justify-center gap-24">
+              <div className="flex">
                 <div className="pointer-events-auto hidden md:block">
                   <LogoPill />
                 </div>
@@ -374,7 +374,7 @@ export function Header() {
                 <MobileNavigation className="pointer-events-auto md:hidden" />
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
-              <div className="flex justify-start">
+              <div className="flex">
                 <div className="pointer-events-auto">
                   <ThemeToggle />
                 </div>

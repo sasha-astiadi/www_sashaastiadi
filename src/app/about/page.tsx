@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <ContainerOuter className="mt-12 sm:mt-24 sm:px-6 lg:px-0">
-      <div className="relative px-3 sm:px-6 lg:px-0">
+      <div className="relative px-2 sm:px-6 lg:px-0">
         <div className="mx-auto max-w-6xl">
           <RevealGroup>
             <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">

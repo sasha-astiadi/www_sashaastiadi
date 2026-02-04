@@ -93,8 +93,8 @@ function MobileNavItem({
         className={clsx(
           'block py-2',
           isActive
-            ? 'font-semibold text-teal-500 dark:text-teal-400'
-            : 'hover:text-teal-500 dark:hover:text-teal-400',
+            ? 'font-semibold text-teal-600 dark:text-teal-400'
+            : 'hover:text-teal-600 dark:hover:text-teal-400',
         )}
       >
         {children}
@@ -124,7 +124,7 @@ function MobileNavigation(
           <PopoverButton
             className={`group flex h-14 items-center rounded-xl px-4 py-0 text-sm font-normal text-zinc-800 shadow-lg shadow-zinc-800/5 backdrop-blur-sm dark:text-zinc-200 md:px-4 ${newHeroGradientLight} ${newHeroGradientDark}`}
           >
-            <span className="text-base font-semibold text-teal-500 dark:text-teal-400">
+            <span className="text-base font-semibold text-teal-600 dark:text-teal-400">
               {pageTitle}
             </span>
             <ChevronDownIcon
@@ -141,7 +141,7 @@ function MobileNavigation(
           <PopoverPanel
             focus
             transition
-            className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 duration-150 data-closed:scale-95 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in dark:bg-zinc-900 dark:ring-zinc-800"
+            className="fixed inset-x-4 top-8 z-50 origin-top rounded-xl bg-white bg-linear-to-b from-[#ffffff] to-[#ffffff]/25 p-8 duration-150 data-closed:scale-95 data-closed:opacity-0 data-enter:ease-out data-leave:ease-in dark:bg-zinc-900 dark:bg-linear-to-b dark:from-[#18181B] dark:to-[#18181B]/10 dark:ring-zinc-800"
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <PopoverButton aria-label="Close menu" className="-m-1 p-1">
@@ -181,13 +181,13 @@ function NavItem({
         className={clsx(
           'relative flex h-full items-center px-3 py-2 transition md:px-4 md:py-0',
           isActive
-            ? 'text-teal-500 dark:text-teal-400'
-            : 'hover:text-teal-500 dark:hover:text-teal-400',
+            ? 'text-teal-600 dark:text-teal-400'
+            : 'hover:text-teal-600 dark:hover:text-teal-400',
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
+          <span className="absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-teal-600/0 via-teal-600/40 to-teal-600/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
         )}
       </Link>
     </li>

@@ -154,8 +154,7 @@ function MobileNavigation(
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/articles">Articles</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
-                <MobileNavItem href="/speaking">Speaking</MobileNavItem>
-                <MobileNavItem href="/uses">Uses</MobileNavItem>
+                <MobileNavItem href="/speaking">Press</MobileNavItem>
               </ul>
             </nav>
           </PopoverPanel>
@@ -204,8 +203,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
         <NavItem href="/about">About</NavItem>
         <NavItem href="/articles">Articles</NavItem>
         <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/speaking">Speaking</NavItem>
-        <NavItem href="/uses">Uses</NavItem>
+        <NavItem href="/speaking">Press</NavItem>
       </ul>
     </nav>
   )
@@ -410,8 +408,8 @@ export function Header() {
                 </div>
               </div>
             </div>
-            <div className="relative hidden grid-cols-[auto_auto_auto] items-center justify-center gap-24 md:grid">
-              <div className="flex">
+            <div className="relative hidden grid-cols-[1fr_auto_1fr] items-center justify-center gap-x-28 md:grid">
+              <div className="flex justify-start">
                 <div className="pointer-events-auto">
                   <LogoPill />
                 </div>
@@ -419,7 +417,7 @@ export function Header() {
               <div className="flex justify-center">
                 <DesktopNavigation className="pointer-events-auto" />
               </div>
-              <div className="flex">
+              <div className="flex justify-end">
                 <div className="pointer-events-auto">
                   <ThemeToggle />
                 </div>

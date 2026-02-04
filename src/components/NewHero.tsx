@@ -24,13 +24,13 @@ export function NewHero() {
                 <div className="mx-auto max-w-lg lg:mx-0">
                   <div className="hidden sm:mt-32 sm:flex lg:mt-0">
                     <div className="relative rounded-full px-3 py-1 text-sm/6 text-zinc-600 ring-1 ring-zinc-900/10 hover:ring-zinc-900/20 dark:text-zinc-400 dark:ring-white/10 dark:hover:ring-white/20">
-                      Ready to step up your web performance?{" "}
+                      Got a project in mind?{" "}
                       <a
                         href="https://calendly.com/sashaastiadi/30min"
                         className={`${libreBodoniItalic} whitespace-nowrap text-zinc-900 dark:text-zinc-100`}
                       >
                         <span aria-hidden="true" className="absolute inset-0" />
-                        Book a free call <span aria-hidden="true">&rarr;</span>
+                        Book a free consultation call <span aria-hidden="true">&rarr;</span>
                       </a>
                     </div>
                   </div>
@@ -40,16 +40,15 @@ export function NewHero() {
                     <span className={`${libreBodoniItalic} text-[1.2em]`}>
                       that{' '}
                       <FlipWords
-                        words={['scale', 'grow', 'perform', 'convert', 'last']}
+                        words={['scale', 'grow', 'evolve', 'convert', 'last']}
                         className="px-0"
                       />
                       .
                     </span>
                   </h1>
                   <p className="mt-6 text-lg font-light text-pretty text-zinc-600 sm:text-lg/8 dark:text-zinc-400">
-                    As a consultant specializing in web development projects, I help teams
-              plan, orchestrate, and execute clear, scalable web applications; drawing on over five
-              years of experience across product planning, UX, engineering, and delivery.
+                    As a web expert, I help teams plan and execute clear, scalable web applications; drawing on over five
+              years of experience across product planning, branding, UX, and engineering.
                   </p>
                   <div className="mt-10 flex items-center gap-x-6">
                     <Button href="#" variant="secondary">

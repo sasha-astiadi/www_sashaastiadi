@@ -30,7 +30,7 @@ export function NewHero() {
                         className={`${libreBodoniItalic} whitespace-nowrap text-zinc-900 dark:text-zinc-100`}
                       >
                         <span aria-hidden="true" className="absolute inset-0" />
-                        Book a call <span aria-hidden="true">&rarr;</span>
+                        Book a free call <span aria-hidden="true">&rarr;</span>
                       </a>
                     </div>
                   </div>

@@ -9,12 +9,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://sashaastiadi.site'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sashaastiadi.site'),
-  title: {
-    template: '%s - Sasha Astiadi',
-    default: 'Sasha Astiadi - Web Developer & Frontend Engineer',
-  },
+  title: 'Sasha Astiadi — Web Developer & Frontend Engineer',
   description:
-    'Sasha Astiadi is a web developer and frontend engineer specializing in high-performing React/Next.js websites, design systems, and product-focused UI engineering.',
+    'Web developer and frontend engineer building thoughtful digital products, systems, and experiences.',
   keywords: [
     'web developer',
     'frontend developer',
@@ -40,19 +37,27 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: '/',
+    title: 'Sasha Astiadi — Web Developer & Frontend Engineer',
+    description: 'Thoughtful product design, frontend engineering, and digital systems.',
+    url: siteUrl,
     siteName: 'Sasha Astiadi',
-    title: 'Sasha Astiadi - Web Developer & Frontend Engineer',
-    description:
-      'Web developer and frontend engineer building high-performing React/Next.js websites, design systems, and product-focused UI engineering.',
+    images: [
+      {
+        url: `${siteUrl}/images/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Sasha Astiadi portfolio',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
-    card: 'summary',
-    title: 'Sasha Astiadi - Web Developer & Frontend Engineer',
+    card: 'summary_large_image',
+    title: 'Sasha Astiadi — Web Developer & Frontend Engineer',
     description:
-      'Web developer and frontend engineer building high-performing React/Next.js websites, design systems, and product-focused UI engineering.',
+      'Thoughtful web development, product design, frontend engineering, and digital systems.',
+    images: [`${siteUrl}/images/og-image.png`],
   },
   robots: {
     index: true,

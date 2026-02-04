@@ -146,7 +146,7 @@ function NavItem({
       <Link
         href={href}
         className={clsx(
-          'relative block px-3 py-2 transition',
+          'relative flex h-full items-center px-3 py-2 transition md:px-4 md:py-0',
           isActive
             ? 'text-teal-500 dark:text-teal-400'
             : 'hover:text-teal-500 dark:hover:text-teal-400',
@@ -164,7 +164,7 @@ function NavItem({
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-normal text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+      <ul className="flex items-center rounded-xl bg-white/90 px-3 text-sm font-normal text-zinc-800 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 md:h-14 md:px-4 md:text-base">
         <NavItem href="/">Home</NavItem>
         <NavItem href="/about">About</NavItem>
         <NavItem href="/articles">Articles</NavItem>
@@ -189,7 +189,7 @@ function ThemeToggle() {
     <button
       type="button"
       aria-label={mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'}
-      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+      className="group flex items-center justify-center rounded-xl bg-white/90 px-3 py-2 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 md:h-14 md:px-4 md:py-0"
       onClick={() => setTheme(otherTheme)}
     >
       <SunIcon className="h-9 w-9 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
@@ -202,6 +202,27 @@ function clamp(number: number, a: number, b: number) {
   let min = Math.min(a, b)
   let max = Math.max(a, b)
   return Math.min(Math.max(number, min), max)
+}
+
+function LogoPill() {
+  return (
+    <Link
+      href="/"
+      aria-label="Home"
+      className="flex items-center justify-center rounded-xl bg-white/90 px-3 py-2 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20 md:h-14 md:px-4 md:py-0"
+    >
+      <img
+        src="/images/sasha_logo_dark.svg"
+        alt="Sasha Astiadi"
+        className="h-9 w-auto dark:hidden"
+      />
+      <img
+        src="/images/sasha_logo_light.svg"
+        alt="Sasha Astiadi"
+        className="hidden h-9 w-auto dark:block"
+      />
+    </Link>
+  )
 }
 
 export function Header() {
@@ -330,7 +351,7 @@ export function Header() {
         )}
         <div
           ref={headerRef}
-          className="top-0 z-10 h-16 pt-6"
+          className="top-0 z-10 h-16 pt-6 md:h-24 md:pt-9"
           style={{
             position:
               'var(--header-position)' as React.CSSProperties['position'],
@@ -343,15 +364,17 @@ export function Header() {
                 'var(--header-inner-position)' as React.CSSProperties['position'],
             }}
           >
-            <div className="relative flex gap-4">
-              <div className="flex flex-1">
-                {!isHomePage && null}
+            <div className="relative grid grid-cols-[1fr_auto_1fr] items-center gap-24">
+              <div className="flex justify-end">
+                <div className="pointer-events-auto hidden md:block">
+                  <LogoPill />
+                </div>
               </div>
-              <div className="flex flex-1 justify-end md:justify-center">
+              <div className="flex justify-end md:justify-center">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
-              <div className="flex justify-end md:flex-1">
+              <div className="flex justify-start">
                 <div className="pointer-events-auto">
                   <ThemeToggle />
                 </div>

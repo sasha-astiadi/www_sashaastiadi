@@ -88,7 +88,7 @@ export function Education() {
     },
     {
       institution: 'CODE University of Applied Sciences',
-      degree: 'Bachelor of Applied Science (BASc), Product Management',
+      degree: 'Bachelor of Applied Science (BASc), Interaction Design',
       logo: logoCode,
       start: '2017',
       end: '2020',

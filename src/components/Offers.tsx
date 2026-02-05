@@ -29,7 +29,7 @@ export function Offers() {
   const dots = useMemo(() => Array.from({ length: slidesCount }, (_, i) => i), [slidesCount])
 
   return (
-    <div className="relative py-12 sm:pt-16 sm:pb-24">
+    <div className="relative py-12 sm:pt-12 sm:pb-24">
       <div aria-hidden="true" className="absolute inset-x-0 top-0 hidden h-1/2 bg-transparent lg:block" />
       <ContainerOuter>
         <div

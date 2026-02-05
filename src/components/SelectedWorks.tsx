@@ -99,7 +99,11 @@ export const SelectedWorks = () => {
                     <div
                       className={`relative flex h-full flex-col overflow-hidden rounded-xl ${item.innerClassName}`}
                     >
-                      <img alt="" src={item.imgSrc} className={`${item.imgClassName} object-center!`} />
+                      <img
+                        alt=""
+                        src={item.imgSrc}
+                        className={`${item.imgClassName} rounded-md object-cover object-center!`}
+                      />
                       {/*  <div className="p-10 pt-4 lg:px-6">
                         <h3 className="text-sm/4 font-normal text-zinc-600 dark:text-zinc-400">{item.eyebrow}</h3>
                         <p className="mt-2 text-lg font-medium tracking-tight text-zinc-800 dark:text-zinc-100">
@@ -109,9 +113,7 @@ export const SelectedWorks = () => {
                       </div>
                       */}
                     </div>
-                    <div
-                      className={`pointer-events-none absolute inset-0 rounded-xl shadow-sm outline outline-zinc-900/10 dark:outline-white/15 ${item.outlineClassName}`}
-                    />
+                    <div className={`pointer-events-none absolute inset-0 rounded-xl ${item.outlineClassName}`} />
                   </div>
                 ))}
               </div>

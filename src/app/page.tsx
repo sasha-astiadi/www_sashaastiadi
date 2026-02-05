@@ -9,6 +9,7 @@ import { TechnologyStack } from '@/components/TechnologyStack'
 import { SelectedWorks } from '@/components/SelectedWorks'
 import { NewHero } from '@/components/NewHero'
 import { ServicesGrid } from '@/components/ServicesGrid'
+import { Offers } from '@/components/Offers'
 import { CTA } from '@/components/CTA'
 import { newHeroGradientDark, newHeroGradientLight } from '@/components/ui/Texts'
 import { RevealGroup, RevealSection } from '@/components/InteractiveReveal'
@@ -27,6 +28,9 @@ export default async function Home() {
       </RevealSection>
       <RevealSection id="services">
         <ServicesGrid />
+      </RevealSection>
+      <RevealSection id="offers">
+        <Offers />
       </RevealSection>
       <RevealSection id="works">
         <SelectedWorks />

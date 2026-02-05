@@ -4,6 +4,7 @@
  import { useEffect, useMemo, useState } from 'react'
 
  import { ContainerOuter } from '@/components/Container'
+ import { Marquee } from '@/components/Marquee'
  import { newHeroGradientDark, newHeroGradientLight } from '@/components/ui/Texts'
  import { Compare } from '@/components/ui/compare'
  import { Sparkles } from '@/components/ui/sparkles'
@@ -61,6 +62,8 @@ export function Offers() {
                             />
                             <Sparkles className="opacity-60" />
                           </div>
+                        ) : slideIndex === 1 ? (
+                          <Marquee />
                         ) : (
                           <div className="relative w-full overflow-hidden rounded-md shadow-2xl aspect-10/6 sm:aspect-2/1 lg:aspect-video">
                             <Image
@@ -145,10 +148,14 @@ export function Offers() {
 
                       <div className="relative mx-auto max-w-md space-y-4 px-4 py-10 sm:max-w-3xl sm:px-6 sm:py-12 lg:col-span-6 lg:col-start-4 lg:max-w-none lg:p-0">
                         <h2 id="join-heading" className="text-3xl font-normal tracking-tight text-zinc-900 dark:text-zinc-100">
-                          Complete Website Revamp
+                          {slideIndex === 1
+                            ? 'Rebranding & Visual System Implementation'
+                            : 'Complete Website Revamp'}
                         </h2>
                         <p className="text-base text-zinc-600 dark:text-zinc-400 sm:text-lg">
-                          Outgrown your current website? When it no longer reflects your product, it’s time for a rethink. I redesign and rebuild it to improve clarity, performance, and conversion, without losing what makes your brand yours.
+                          {slideIndex === 1
+                            ? 'Does your brand feel inconsistent across touchpoints? When a brand lacks consistency, it shows. I create and implement visual systems that bring clarity and cohesion to your product and website.'
+                            : 'Outgrown your current website? When it no longer reflects your product, it’s time for a rethink. I redesign and rebuild it to improve clarity, performance, and conversion, without losing what makes your brand yours.'}
                         </p>
                       </div>
                     </div>

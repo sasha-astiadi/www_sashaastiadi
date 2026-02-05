@@ -2,12 +2,24 @@ import assert from 'assert'
 import * as cheerio from 'cheerio'
 import { Feed } from 'feed'
 
-export async function GET(req: Request) {
-  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+import { getAllArticles } from '@/lib/articles'
 
-  if (!siteUrl) {
-    throw Error('Missing NEXT_PUBLIC_SITE_URL environment variable')
+function getSiteUrl(req: Request) {
+  const forwardedProto = req.headers.get('x-forwarded-proto')
+  const forwardedHost = req.headers.get('x-forwarded-host')
+
+  if (forwardedProto && forwardedHost) {
+    return `${forwardedProto}://${forwardedHost}`
   }
+
+  const env = process.env.NEXT_PUBLIC_SITE_URL
+  if (env) return env
+
+  return new URL(req.url).origin
+}
+
+export async function GET(req: Request) {
+  const siteUrl = getSiteUrl(req)
 
   let author = {
     name: 'Sasha Astiadi',
@@ -28,22 +40,18 @@ export async function GET(req: Request) {
     },
   })
 
-  let articleIds = require
-    .context('../articles', true, /\/page\.mdx$/)
-    .keys()
-    .filter((key) => key.startsWith('./'))
-    .map((key) => key.slice(2).replace(/\/page\.mdx$/, ''))
+  const articles = await getAllArticles()
 
-  for (let id of articleIds) {
-    let url = String(new URL(`/articles/${id}`, req.url))
+  for (const article of articles) {
+    const url = `${siteUrl}/articles/${article.slug}`
     let html = await (await fetch(url)).text()
     let $ = cheerio.load(html)
 
-    let publicUrl = `${siteUrl}/articles/${id}`
-    let article = $('article').first()
-    let title = article.find('h1').first().text()
-    let date = article.find('time').first().attr('datetime')
-    let content = article.find('[data-mdx-content]').first().html()
+    let publicUrl = `${siteUrl}/articles/${article.slug}`
+    let articleEl = $('article').first()
+    let title = articleEl.find('h1').first().text()
+    let date = articleEl.find('time').first().attr('datetime')
+    let content = articleEl.find('[data-mdx-content]').first().html()
 
     assert(typeof title === 'string')
     assert(typeof date === 'string')

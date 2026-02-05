@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     siteName: 'Sasha Astiadi',
     images: [
       {
-        url: `${siteUrl}/images/og-image.png`,
+        url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: 'Sasha Astiadi portfolio',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'Sasha Astiadi — Web Developer & Frontend Engineer',
     description:
       'Thoughtful web development, product design, frontend engineering, and digital systems.',
-    images: [`${siteUrl}/images/og-image.png`],
+    images: [`${siteUrl}/og-image.png`],
   },
   robots: {
     index: true,

@@ -67,6 +67,18 @@ export function Offers() {
                           <Marquee />
                         ) : slideIndex === 2 ? (
                           <CodePanel />
+                        ) : slideIndex === 3 ? (
+                          <div className="relative w-full overflow-hidden rounded-md shadow-2xl aspect-10/6 sm:aspect-2/1 lg:aspect-video">
+                            <video
+                              src="/images/offers/marquee/marquee4.mp4"
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              preload="metadata"
+                              className="h-full w-full object-cover"
+                            />
+                          </div>
                         ) : (
                           <div className="relative w-full overflow-hidden rounded-md shadow-2xl aspect-10/6 sm:aspect-2/1 lg:aspect-video">
                             <Image
@@ -155,6 +167,8 @@ export function Offers() {
                             ? 'Rebranding & Visual System Implementation'
                             : slideIndex === 2
                               ? 'High-Performance Frontend Engineering'
+                              : slideIndex === 3
+                                ? 'UX Design & Research'
                               : 'Complete Website Revamp'}
                         </h2>
                         <p className="text-base text-zinc-600 dark:text-zinc-400 sm:text-lg">
@@ -162,6 +176,8 @@ export function Offers() {
                             ? 'Does your brand feel inconsistent across touchpoints? When a brand lacks consistency, it shows. I create and implement visual systems that bring clarity and cohesion to your product and website.'
                             : slideIndex === 2
                               ? 'Is your frontend starting to feel slow or fragile? I build and refactor frontends that are fast, scalable, and maintainable — without compromising design quality.'
+                              : slideIndex === 3
+                                ? 'Are users struggling to find or understand what they need? Whether you’re starting fresh or refining what you have, I identify friction in user flows and refine structure, interactions, and hierarchy to make your product easier to use.'
                               : 'Outgrown your current website? When it no longer reflects your product, it’s time for a rethink. I redesign and rebuild it to improve clarity, performance, and conversion, without losing what makes your brand yours.'}
                         </p>
                       </div>

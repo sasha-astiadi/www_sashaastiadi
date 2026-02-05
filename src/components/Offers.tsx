@@ -29,7 +29,7 @@ export function Offers() {
   const dots = useMemo(() => Array.from({ length: slidesCount }, (_, i) => i), [slidesCount])
 
   return (
-    <div className="relative py-12 sm:pt-12 sm:pb-24">
+    <div className="relative py-4 sm:pt-12 sm:pb-16">
       <div aria-hidden="true" className="absolute inset-x-0 top-0 hidden h-1/2 bg-transparent lg:block" />
       <ContainerOuter>
         <div
@@ -62,7 +62,6 @@ export function Offers() {
                               aspectClassName="aspect-10/6 sm:aspect-2/1 lg:aspect-video"
                               initialPosition={0.5}
                             />
-                            <Sparkles className="opacity-60" />
                           </div>
                         ) : slideIndex === 1 ? (
                           <Marquee />
